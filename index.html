@@ -1,0 +1,1448 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo limpio</title>
+    <link rel="icon" type="image/x-icon" href="/Recursos/page/logo redimencionado.png">
+    <link rel="stylesheet" href="./Vista/style/normalize.css"><!--estandarizar los estilos de todos los navegadores-->
+    <link rel="stylesheet" href="./Vista/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./Vista/style/style.css"><!--Estilo principal-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--tipografia de letra-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="row">
+        </div>
+        <!---------------------------------------------------------------------------------------------contenido-->
+        <div class="col-12" id="contenido">
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------------------pie de pagina-->
+    </div>
+
+    <!-------------------------------------------------------------------Modal loginEmpresa-->
+    <div id="modalRecuperarContrasenaEmpresa" class="modal">
+        <div class="contenido-modal">
+            <h2>Recuperar contraseña</h2>
+            <div id="formRecuperarContrasena">
+                <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
+                <input type="number" class="rectanguloModal3" id="recuperarContraseñaCorreo"
+                    placeholder="Escriba el NIT" name="NIT">
+                <button id="botonConfirmarRecuperar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------MODALES--------------------------------------------->
+
+    <!----------------------------------------Modal Login Empresa--------------------------------------------->
+    <div id="modalRecuperarContrasenaEmpresa" class="modal">
+        <div class="contenido-modal">
+            <h2>Recuperar contraseña</h2>
+            <div id="formRecuperarContrasena">
+                <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
+                <input type="number" class="rectanguloModal3" id="recuperarContraseñaCorreo"
+                    placeholder="Escriba el NIT" name="NIT">
+                <button id="botonConfirmarRecuperar">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!----------------------------------------Modal Login Usuario--------------------------------------------->
+    <div id="modalRecuperarContrasena" class="modal">
+        <div class="contenido-modal">
+            <h2>Recuperar contraseña</h2>
+            <div id="formRecuperarContrasena">
+                <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
+                <label for="recuperarContraseñaCorreo">Selecione su fecha de cumpleaños</label>
+                <input type="date" class="rectanguloModal3" id="recuperarContraseñaCorreo" name="edad">
+                <button id="botonConfirmarRecuperar">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!----------------------------------------Modales del Menú del Usuario--------------------------------------------->
+    <div id="menuLateral" class="sliding-window">
+        <div class="row" id="EncabezadoModal">
+            <div class="col-12">
+                <button id="flechaAtras" class="flechaAtrasMenuLateral">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                    </svg>
+                </button>
+                <img src="./Recursos/page/logo redimencionado.png" alt="logo" width="50%" id="logoMenu">
+            </div>
+        </div>
+        <div class="row" id="ContenidoModal">
+            <div class="col-12">
+                <button id="btnPerfilUsuario" onclick="mostrarPerfilUsuario()">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg> Perfil
+                    </h3>
+                </button>
+                <hr>
+                <button id="btnConfiguracion" onclick="mostrarConfig()">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                            <path
+                                d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
+                        </svg> Configuración
+                    </h3>
+                </button>
+                <hr>
+                <button id="btnAyuda" onclick="mostrarSoporte()">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                        </svg> Ayuda
+                    </h3>
+                </button>
+            </div>
+        </div>
+        <div class="row" id="PieDePaginaModal">
+            <div class="col-12">
+                <button>
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                            <path fill-rule="evenodd"
+                                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                        </svg> Cerrar Sesión
+                    </h3>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modalNotificaciones" class="modal-right">
+        <div class="row" id="encabezadoModal">
+            <button id="flechaAtras2" class="flechaAtrasMenuLateral">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                    class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                </svg>
+            </button>
+            <div class="col-12">
+                <h3 class="d-flex justify-content-center">Notificaciones
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bell-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                    </svg>
+                </h3>
+            </div>
+        </div>
+        <div class="row" id="contenidoModal">
+            <div class="col-12">
+                <h4 class="d-flex justify-content-end">Marcar como leído</h4>
+                <button class="btnNotificacion">
+                    <div class="btnContenedorNotificacion">
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar3" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                                <path
+                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                            </svg>
+                        </div>
+                        <div class="col-10">
+                            <div class="textoNotificacion">
+                                <h3>Calendario</h3>
+                                <p>Tienes un evento nuevo! </p>
+                                <h4 class="d-flex justify-content-end">14/02/2024</h4>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------------------------------Modales del Perfil del Usuario--------------------------------------------->
+    <div id="miModal" class="modal">
+        <div class="contenido-modal">
+            <svg xmlns="http://www.w3.org/2000/svg" color="#283E30" width="60" height="60" fill="currentColor"
+                class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+                <path
+                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg>
+            <p>¿Seguro que quiere eliminar su cuenta?</p>
+            <button id="botonCancelar">Cancelar</button>
+            <button id="botonAceptar">Aceptar</button>
+        </div>
+    </div>
+
+
+    <div id="modalCambiarContrasena" class="modal">
+        <div class="contenido-modal">
+            <h2>Cambiar contraseña</h2>
+            <div id="formCambiarContrasena">
+                <input type="password" class="rectanguloModal3" placeholder="Contraseña actual" required>
+                <input type="password" class="rectanguloModal3" placeholder="Contraseña nueva" required>
+                <input type="password" class="rectanguloModal3" placeholder="Repetir contraseña" required>
+                <button id="botonConfirmar">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="modalCambiarTelefono" class="modal">
+        <div class="contenido-modal">
+            <h2>Cambiar teléfono</h2>
+            <div id="formCambiartelefono">
+                <input type="tel" class="rectanguloModal3" placeholder="teléfono actual" required>
+                <input type="tel" class="rectanguloModal3" placeholder="Nuevo teléfono" required>
+                <button id="botonConfirmarTelefono">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="modalCambiarNombre" class="modal">
+        <div class="contenido-modal">
+            <h2>Cambiar Nombre</h2>
+            <div id="formCambiarNombre">
+                <input type="tel" class="rectanguloModal3" placeholder="Ingrese el nuevo nombre" required>
+                <button id="botonConfirmarNombre">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+    <!------------------------------------------------TEMPLATES----------------------------------------------------->
+
+    <!----------------------------------------Templates de Encabezados --------------------------------------------->
+    <template id="encabezado1">
+        <div class="tituloPrincipal">
+            <div class="col-1"><button id="flechaAtras" onclick="mostrarMenuUsuario()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                    </svg></button></div>
+            <div class="col-11">
+                <h1 id="tituloEncabezado" class="d-flex justify-content-center 100%"></h1>
+            </div>
+        </div>
+    </template>
+
+    <template id="encabezado2">
+
+    </template>
+
+    <template id="encabezado3">
+
+    </template>
+
+    <!----------------------------------------Template de Pie de Pág --------------------------------------------->
+    <template id="pieDePagina1">
+        <div class="pieDePagina">
+            <button id="btnFormRegis" onclick="registrarUsuario()">Registrarse <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    <path fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                </svg></button> | <button id="bttnRegisEmpresa" onclick="registarEmpresa()">Registra tu
+                empresa
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-buildings-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z" />
+                </svg></button>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Inicio--------------------------------------------->
+    <template id="paginaInicio">
+        <!---------------------------------------------------------------------------------------------encabezado-->
+        <div class="row">
+            <div class="col-12" id="encabezado">
+                <img src="/Recursos/page/logo redimencionado.png" alt="Logo" id="logo" width="50%">
+                <h2 class="d-flex justify-content-center 100%">Conviértete en un agente de cambio</h2>
+                <h1 class="d-flex justify-content-center 100%">Preserva el planeta, preserva la vida</h1>
+                <h3 class="d-flex justify-content-center 100%">Únete a nosotros</h3>
+            </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------contenido-->
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <button type="button" class="btn btn-success" id="btnInicioUsuario"
+                    onclick="mostrarInicioUsuario()">Ingresar</button>
+                <img src="/Recursos/page/nueva mano gradiente.png" alt="ManoConPlaneta" id="manoPlaneta" width="400px">
+            </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------pie de pagina-->
+        <div class="row" id="pieDePagina">
+            <div class="col-12">
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Ingreso--------------------------------------------->
+    <template id="login">
+        <!----------------------------------------------------------------------------------------------------encabezado-->
+        <div class="row" class="encabezado">
+            <div class="col-12">
+                <img src="./Recursos/page/logo redimencionado.png" alt="logo" id="logo" width="200px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="contenido">
+                    <div class="formulario">
+                        <form method="post" id="formLogin">
+                            <div class="username">
+                                <input type="text" name="correo" required>
+                                <label> Correo</label>
+                            </div>
+                            <div class="password">
+                                <input type="password" name="password" required>
+                                <label>Contraseña</label>
+                            </div>
+                        </form>
+                        <button class="btnCrear" id="BtnIngresar" onclick="login()">Ingresar</button>
+                        <button class="btnRecordar" id="recordar">Recuperar contraseña</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="pieDePagina">
+            <div class="col-12">
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Registro Empresa--------------------------------------------->
+    <template id="formularioEmpresa">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="formulario" id="formEmpresa">
+                    <form method="post">
+                        <div class="username">
+                            <input type="text" name="nombre_empresa" id="nombreUsuario" required>
+                            <label> Nombre de la empresa </label>
+                        </div>
+                        <div class="NumNIT">
+                            <input type="number" name="NIT" id="numeroNIT" required>
+                            <label> NIT </label>
+                        </div>
+                        <div class="phone">
+                            <input type="tel" name="numero_contacto" id="telefono" required>
+                            <label> Número de contacto </label>
+                        </div>
+                        <div class="birthdate">
+                            <input type="text" name="direccion" id="direccion" required>
+                            <label> Dirección </label>
+                        </div>
+                        <div class="email">
+                            <input type="email" name="correo" id="correoElectronico" required>
+                            <label> Correo </label>
+                        </div>
+                        <div class="password">
+                            <input type="password" name="contraseña" id="contraseña" required>
+                            <label> Contraseña </label>
+                        </div>
+                        <div class="confirm-password">
+                            <input type="password" name="confirm-password" required>
+                            <label> Confirmar contraseña </label>
+                        </div>
+                        <button class="btnCrear" onclick="mostrarInicioEmpresa()">Crear</button>
+                    </form>
+                    <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
+                            onclick="mostrarInicioEmpresa()">Inicia sesión</button>.</h4>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Registro Usuario--------------------------------------------->
+    <template id="formRegisUsuario">
+        <div class="row">
+            <div class="col-12" id="encabezado">
+                <h1 class="titulo">Registro<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                        fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="formulario" id="formUsuario">
+                    <form method="post">
+                        <div class="username">
+                            <input type="text" name="nombre" id="nombreUsuario" required>
+                            <label> Nombre </label>
+                        </div>
+                        <div class="email">
+                            <input type="email" name="correo" id="correoElectronico" required>
+                            <label> Email </label>
+                        </div>
+                        <div class="phone">
+                            <input type="tel" name="numero_contacto" id="NumeroCelular" required>
+                            <label> Celular </label>
+                        </div>
+                        <div class="birthdate">
+                            <input type="date" name="fecha_nacimiento" id="FechaDeNacimiento" required>
+                            <label> Fecha de nacimiento </label>
+                        </div>
+                        <div class="password">
+                            <input type="password" name="contraseña" id="Contraseña" required>
+                            <label> Contraseña </label>
+                        </div>
+                        <div class="confirm-password">
+                            <input type="password" name="confirm-password" required>
+                            <label> Confirmar contraseña </label>
+                        </div>
+                        <button class="btnCrear" onclick="mostrarInicioUsuario()">Crear</button>
+                        <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
+                                id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
+                        </h4>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </template>
+
+    <!----------------------------------------Template Pantalla Menú Usuario--------------------------------------------->
+    <template id="menuDeUsuario">
+        <div class="row" id="encabezado">
+            <div class="encabezadoMenu">
+                <div id="encabezadoIconMenu" class="d-flex justify-content-between">
+                    <button id="btnMenuLateral"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                            fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg></button>
+                    <button id="btnNotificationes"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg></button>
+                </div>
+                <h1 class="d-flex justify-content-center">Recicla, un pequeño gesto de gran impacto</h1>
+            </div>
+        </div>
+        <div class="col-12" id="contenido">
+            <div class="menuButtons">
+                <button class="button1" id="btnEmpresa" onclick="mostrarEmpresas()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-buildings-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z" />
+                    </svg><br>Empresas</button>
+                <button class="button2" id="btnMapa" onclick="mostrarMapa()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="86" height="86" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg><br>Mapa Limpio</button>
+                <button class="button2" id="btnCalendario" onclick="mostrarCalendario()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-calendar3" viewBox="0 0 16 16">
+                        <path
+                            d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                        <path
+                            d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </svg><br>Calendario</button>
+                <button class="button1" id="btnAprendeReciclar" onclick="mostrarAprenderReciclar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                    </svg><br>Aprende a reciclar</button>
+                <button class="button2" id="btnEnvios" onclick="mostrarEnvios()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="86" height="86" fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6z" />
+                    </svg><br>Envios</button>
+
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Mapa Limpio --------------------------------------------->
+    <template id="mapaLimpio">
+        <div class="row" id="encabezado"></div>
+        <div class="col-12" id="contenido">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31811.40697629961!2d-74.09388545!3d4.6958327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1710160801979!5m2!1ses-419!2sco"
+                width="auto" height="900" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" id="Maps"></iframe>
+        </div>
+
+    </template>
+
+    <!----------------------------------------Template Pantalla Calendario--------------------------------------------->
+    <template id="calendario">
+        <div class="row" id="encabezado">
+            <div class="tituloPrincipal">
+                <div class="col-1"><button id="flechaAtras" onclick="retrocederPagina()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                        </svg></button></div>
+                <div class="col-11">
+                    <h1 id="text" class="d-flex justify-content-center 100%">Calendario</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-12" id="contenido">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="month-picker" id="month-picker"> May </span>
+                    <div class="year-picker" id="year-picker">
+                        <span class="year-change" id="pre-year">
+                            <pre></pre>
+                        </span>
+                        <span id="year">2020 </span>
+                        <span class="year-change" id="next-year">
+                            <pre>></pre>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="calendar-body">
+                    <div class="calendar-week-days">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-days"></div>
+                </div>
+                <div class="calendar-footer"></div>
+                <div class="date-time-formate">
+                    <div class="day-text-formate">TODAY</div>
+                    <div class="date-time-value">
+                        <div class="time-formate">01:41:20</div>
+                        <div class="date-formate">03 - march - 2022</div>
+                    </div>
+                </div>
+                <div class="month-list"></div>
+            </div>
+        </div>
+        </div>
+        <script src="./Controlador/calendario.js" defer></script>
+    </template>
+
+    <!----------------------------------------Template Pantalla Aprende--------------------------------------------->
+    <template id="aprendeReciclar">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <img src="/Recursos/page/Reciclaje.jpeg" alt="canecas" width="400px" id="canecas">
+                <p>Reciclar es una práctica fundamental que sirve para varios propósitos importantes.
+                    En primer lugar, ayuda a conservar los recursos naturales limitados de nuestro planeta
+                    al reutilizar materiales como papel, plástico, vidrio y metales en lugar de extraer recursos
+                    adicionales. Además, el reciclaje contribuye a la reducción de residuos, disminuyendo la cantidad
+                    de desechos que van a los vertederos y así reduciendo la contaminación del suelo, agua y aire
+                    asociada
+                    con la eliminación de residuos. También ayuda a ahorrar energía, ya que la fabricación de productos
+                    a
+                    partir de materiales reciclados generalmente requiere menos energía que la producción a partir de
+                    materias primas vírgenes, lo que a su vez puede reducir las emisiones de gases de efecto
+                    invernadero.
+                    Además, la industria del reciclaje crea empleos en la recolección, procesamiento y fabricación de
+                    productos reciclados, promoviendo así una economía circular en la que los productos y materiales se
+                    reciclan y reutilizan en lugar de desecharse después de un solo uso. En resumen, reciclar es
+                    esencial
+                    para promover la sostenibilidad ambiental, conservar recursos, reducir la contaminación y fomentar
+                    una
+                    economía más circular y sostenible.</p>
+                <h3>¿Cómo reciclar?</h3>
+                <p><strong>1. Separación de residuos:</strong> Clasifica tus residuos en diferentes contenedores según
+                    su
+                    tipo, como papel, plástico, vidrio y metal.</p>
+                <p><strong>2. Preparación de los materiales:</strong> Enjuaga y limpia los envases antes de reciclarlos
+                    para evitar la
+                    contaminación de otros materiales.</p>
+                <p><strong>3. Entrega a centros de reciclaje:</strong> Lleva los materiales reciclables a los centros de
+                    reciclaje designados en tu área,
+                    o utiliza los servicios de recolección de reciclaje proporcionados por tu comunidad.</p>
+                <h3>Categorías de clasificación de residuos:</h3>
+                <p><strong>Residuos orgánicos:</strong> Incluye restos de alimentos, residuos de jardín y otros
+                    materiales biodegradables. Estos residuos pueden ser compostados
+                    para convertirse en abono orgánico.</p>
+                <p><strong>Residuos reciclables:</strong> Comprende materiales como papel, cartón, plástico, vidrio y
+                    metales. Estos materiales pueden ser reciclados y reutilizados en la fabricación
+                    de nuevos productos.</p>
+                <p><strong>Residuos peligrosos:</strong> Engloba materiales como baterías, pinturas, productos químicos
+                    y medicamentos. Estos residuos pueden ser tóxicos o peligrosos para el medio ambiente y la salud
+                    humana si no se manejan adecuadamente.</p>
+                <p><strong>Residuos electrónicos (e-waste):</strong> Incluye dispositivos electrónicos y eléctricos en
+                    desuso, como computadoras, teléfonos móviles, televisores y electrodomésticos. Estos residuos pueden
+                    contener
+                    materiales peligrosos y deben ser reciclados de forma adecuada.</p>
+                <p><strong>Residuos voluminosos:</strong> Comprende objetos grandes como muebles, colchones,
+                    electrodomésticos grandes, neumáticos y otros objetos de gran tamaño que no caben en los
+                    contenedores de basura estándar. Estos residuos
+                    pueden requerir un manejo especial para su eliminación.</p>
+                <p><strong>Residuos de construcción y demolición:</strong> Engloba materiales como madera, concreto,
+                    ladrillos, azulejos y otros residuos generados durante actividades de construcción, renovación o
+                    demolición. Estos residuos pueden
+                    ser reciclados o reutilizados en proyectos de construcción.</p>
+
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Empresas--------------------------------------------->
+    <template id="listaEmpresa">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <input type="search" placeholder="buscar... " id="buscar" name="Empresas">
+                <select name="filtroBusquedaEmpresa" id="filtroBusquedaEmpresa">
+
+                </select>
+
+
+                <div class="empresaBtnInfo">
+                    <div class="col-4">
+                        <img src="/Recursos/page/sociedades-capital redimimencionadas.gif" alt="logo default empresa"
+                            width="120px" id="logoEmpresas">
+                    </div>
+                    <div class="col-8">
+                        <h2 id="tituloEmpresas">Titulo empresa</h2>
+                        <nav>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z" />
+
+                            </svg><span id="descripcionEmpresa"> Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Ipsam recusandae quis aut et
+                                nostrum odio</span>
+                            <br><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                            </svg> <span id="ubicacion">Ubicacion</span>
+                            <br><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg> <span id="telefonoEmpresa"> Telefono</span>
+                            <br><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                            </svg> <span id="correoEmpresa">Correo@correo</span>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Privacidad--------------------------------------------->
+    <template id="privacidad">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto">
+                    <p>En Mundo Limpio, la protección de tu privacidad y la seguridad de tu información son
+                        fundamentales.
+                        Implementamos rigurosas medidas de seguridad y cumplimos con estrictas políticas de privacidad
+                        para
+                        salvaguardar tus datos personales. La información recopilada se utiliza exclusivamente con el
+                        propósito
+                        de facilitar la gestión de residuos reciclables y mejorar la experiencia del usuario en la
+                        plataforma.
+                        <br><br>
+                        Utilizamos tecnologías seguras para la transmisión y almacenamiento de datos, garantizando la
+                        confidencialidad de la información personal. Solo compartimos datos con las empresas
+                        recolectoras
+                        involucradas en la transacción, asegurando que se utilicen exclusivamente para la recolección y
+                        reciclaje de residuos.
+                        <br><br>
+                        Además, ofrecemos a los usuarios control sobre su información. Puedes acceder y modificar tu
+                        perfil, así
+                        como gestionar la visibilidad de tu información en la plataforma. Mundo Limpio se compromete a
+                        no vender
+                        ni compartir datos personales con terceros no autorizados.
+                    </p>
+                    <img src="/Recursos/page/logo redimencionado.png" alt="MarcaDeAguaFondo" class="background">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Funcionamiento--------------------------------------------->
+    <template id="funcionamiento">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto">
+                    <p>Mundo Limpio es una plataforma que conecta a ciudadanos y empresas recolectoras. Los usuarios
+                        registran
+                        sus residuos reciclables y solicitan la recolección a través de la plataforma. Las empresas
+                        recolectoras
+                        recogen los materiales y los reciclan, generando impactos ambientales positivos. La plataforma
+                        fomenta
+                        la conciencia ambiental y la participación ciudadana al ofrecer una solución fácil y
+                        gratificante para
+                        la gestión de residuos. Con tecnología y educación ambiental, Mundo Limpio impulsa un cambio
+                        hacia una
+                        Bogotá más sostenible y responsable.
+                    </p>
+                    <img src="/Recursos/page/logo redimencionado.png" alt="Fondo" class="background">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla En que se Diferencia Mundo Limpio--------------------------------------------->
+    <template id="diferenciado">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto">
+                    <p>Mundo Limpio se distingue de otros sitios web de reciclaje por su enfoque integral y su
+                        compromiso con la
+                        sostenibilidad, la participación ciudadana y la transparencia. Nuestra plataforma no solo
+                        facilita la
+                        conexión entre usuarios y empresas recolectoras.
+                        <br><br>
+                        La transparencia es un pilar fundamental en Mundo Limpio. Ofrecemos a los usuarios información
+                        clara
+                        sobre las empresas recolectoras y las políticas de recolección, fomentando una toma de
+                        decisiones
+                        informada. Además, priorizamos la educación ambiental, proporcionando recursos que empoderan a
+                        la
+                        comunidad para comprender la importancia del reciclaje y la reducción de residuos.
+                        <br><br>
+                        Nuestra plataforma no solo busca la gestión eficiente de residuos, sino también generar un
+                        impacto
+                        social positivo, promoviendo la formalización del sector de recicladores y contribuyendo al
+                        bienestar
+                        general de la comunidad.
+                    </p>
+                    <img src="/Recursos/page/logo redimencionado.png" alt="Fondo" class="background">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Como realizar un PQR--------------------------------------------->
+    <template id="comoHacerPqr">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto">
+                    <p>Para presentar una Petición, Queja o Reclamo (PQR) en Mundo Limpio, sigue estos pasos sencillos
+                        para
+                        garantizar una respuesta efectiva y satisfactoria. Inicia sesión en tu cuenta en la plataforma y
+                        busca
+                        la sección de "Soporte" o "Contacto". Allí, encontrarás un formulario específico para PQR.
+                        Proporciona
+                        tu información de contacto y detalla claramente la naturaleza de tu solicitud, ya sea una
+                        pregunta,
+                        queja o reclamo.
+                        <br>
+                        Es importante incluir toda la información relevante, como números de referencia de envíos,
+                        fechas y
+                        detalles específicos de la situación. Adjunta cualquier documento o evidencia que respalde tu
+                        solicitud,
+                        si es aplicable. Mundo Limpio se compromete a revisar cada PQR de manera diligente y responder
+                        en el
+                        menor tiempo posible.
+                        <br>
+                        Además del formulario en línea, también puedes comunicarte con nuestro equipo de soporte a
+                        través de
+                        canales de contacto proporcionados en la plataforma. Garantizamos la confidencialidad de la
+                        información
+                        proporcionada y nos esforzamos por resolver cualquier inquietud de manera efectiva,
+                        fortaleciendo así
+                        nuestra relación con los usuarios y mejorando continuamente nuestros servicios.
+                    </p>
+                    <img src="/Recursos/page/logo redimencionado.png" alt="Fondo" class="background">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Añadir y Eliminar reseñas --------------------------------------------->
+    <template id="reseñasPasos">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto">
+                    <p>Añadir o eliminar reseñas en Mundo Limpio es un proceso transparente y fácil. Los usuarios
+                        registrados
+                        pueden compartir sus experiencias y opiniones sobre las empresas recolectoras a través de
+                        reseñas en la
+                        plataforma. Para añadir una reseña, simplemente inicia sesión, busca la empresa en cuestión y
+                        selecciona
+                        la opción de dejar una reseña. Expresa tu opinión y proporciona detalles sobre la calidad del
+                        servicio,
+                        la puntualidad y otros aspectos relevantes.
+                        <br><br>
+                        Para mantener la integridad de las reseñas, Mundo Limpio establece ciertos criterios de
+                        moderación. Las
+                        reseñas deben ser constructivas, basadas en experiencias reales y evitar contenido ofensivo. En
+                        caso de
+                        que se desee eliminar una reseña propia, los usuarios pueden acceder a su historial de reseñas,
+                        seleccionar la reseña en cuestión y seguir los pasos para eliminarla.
+                        <br><br>
+                        Este sistema de reseñas contribuye a la transparencia y confianza en la plataforma, permitiendo
+                        que la
+                        comunidad comparta sus experiencias para beneficiar a otros usuarios y mejorar la calidad del
+                        servicio.
+                    </p>
+                    <img src="/Recursos/page/logo redimencionado.png" alt="Fondo" class="background">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Quienes Somos--------------------------------------------->
+    <template id="mundoLimpio">
+        <div class="row" id="encabezado"></div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div class="texto2">
+                    <div class="col-9">
+                        <h2>¿Quienes Somos?</h2>
+                        <p> Somos un equipo comprometido con el desarrollo sostenible y la mejora del medio ambiente en
+                            Bogotá. Nos
+                            hemos unido bajo el proyecto "Mundo Limpio", con el objetivo de abordar la problemática del
+                            reciclaje en
+                            la ciudad y promover prácticas más responsables.</p>
+                    </div>
+                    <div class="col-3">
+                        <img src="/Recursos/page/logo redimencionado.png" alt="logo" width="100%">
+                    </div>
+
+                </div>
+                <div class="texto">
+                    <p>
+                        Conscientes de los desafíos que enfrenta nuestra comunidad en relación con la falta de
+                        conciencia, la
+                        infraestructura inadecuada y la informalidad en el sector de recicladores, nos dedicamos a
+                        buscar
+                        soluciones innovadoras y efectivas.
+                        <br><br>
+                        <span class="estilo1">¿Por qué hacemos lo que hacemos?</span>
+                        <br><br>
+                        Hacemos lo que hacemos en Mundo Limpio porque estamos comprometidos con la transformación de
+                        Bogotá
+                        hacia un entorno más sostenible. Reconocemos la problemática del reciclaje en la ciudad y
+                        entendemos la
+                        importancia de abordarla de manera integral. Nuestra misión es fomentar la conciencia ambiental,
+                        proporcionar soluciones innovadoras para la gestión de residuos y promover la participación
+                        ciudadana
+                        activa. Creemos que al unir tecnología, educación ambiental y recompensas, podemos inspirar un
+                        cambio
+                        positivo en la forma en que gestionamos nuestros desechos, generando impactos ambientales,
+                        sociales y
+                        económicos beneficiosos para la comunidad y el planeta.
+                        <br><br>
+                        <span class="estilo1">Misión</span>
+                        <br><br>
+                        En Mundo Limpio, nuestra misión es liderar la transformación hacia un Bogotá más sostenible,
+                        promoviendo
+                        la conciencia ambiental y ofreciendo soluciones innovadoras para la gestión eficiente de
+                        residuos
+                        reciclables. Buscamos no solo mitigar la problemática actual del reciclaje en la ciudad, sino
+                        también
+                        inspirar a la comunidad a adoptar prácticas más responsables.
+                    </p>
+                    <div class="imgDe">
+                        <img src="/Recursos/page/logo redimencionado.png" alt="logo" class="background">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Ayuda--------------------------------------------->
+    <template id="preguntas">
+        <div class="row" id="encabezado"></div>
+        </div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div id="menuAyuda">
+                    <h3 class="d-flex justify-content-center">¡Bienvenidos a nuestro canal de servicio limpio!</h3>
+                    <button id="btnFuncionamiento" onclick="mostrarFuncionamiento()">¿Como funciona Mundo
+                        Limpio?</button>
+                    <button>Añadir o eliminar reseñas de mundo limpio</button>
+                    <button id="btnDiferenciado" onclick="mostarDiferenciado()">En qué se diferencia Mundo Limpio de
+                        otros sitios web de reciclaje</button>
+                    <button id="btnComoHacerPQR" onclick="mostrarComoHacerPQR()">¿Cómo se realizar un PQR?</button>
+                    <h3 class="d-flex justify-content-center">Preguntas frecuentes</h3>
+                    <button id="btnSobreNosotros" onclick="mostarSobreNosotros()">¿Qué es Mundo Limpio</button>
+                    <button id="btnPrivacidad" onclick="mostrarPrivacidad()">¿Cómo protege Mundo Limpio mi privacidad y
+                        mi información</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Configuración--------------------------------------------->
+    <template id="configuracion">
+        <div class="row" id="encabezado">
+        </div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div id="config">
+                    <h3>Preferencias</h3>
+                    <button class="d-flex justify-content-between" onclick="mostrarPerfilUsuario()">Perfil<svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671" />
+                        </svg></button>
+                    <button class="d-flex justify-content-between">Cuenta<svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671" />
+                        </svg></button>
+                    <h3>Contacto</h3>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg><a href="https://web.whatsapp.com/"> Escríbenos al WhatsApp</a></button>
+                    <h3>Soporte</h3>
+                    <button class="d-flex justify-content-between" onclick="mostarSobreNosotros()">Sobre nosotros<svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671" />
+                        </svg></button>
+                    <button class="d-flex justify-content-between" onclick="mostrarSoporte()">Ayuda<svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="pieDePagina2">
+            <div class="col-12">
+                <button class="exitBtn">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                            <path fill-rule="evenodd"
+                                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                        </svg> Cerrar sesión</h4>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Configuras Cuenta Usuario--------------------------------------------->
+    <template id="perfilUsuario">
+        <div class="row" id="encabezado">
+            <div class="col-12">
+                <div class="PerfilCliente">
+                    <button id="flechaAtras" class="flechaAtras" onclick="mostrarMenuUsuario()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                        </svg></button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="106" height="106" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                    <h2>Nombre del usuario <button id="btnCambiarNombre"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg></button></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="contenido">
+            <div class="col-12">
+                <div id="config">
+                    <label for="correoElectronico" class="d-flex justify-content-between">Correo electronico<input
+                            type="text" placeholder="usuario@email.org" id="correoElectronico"></label>
+                    <label for="CambiarPass" class="d-flex justify-content-between">Contraseña<input type="password"
+                            placeholder="********" id="CambiarPass" class="d-flex justify-content-between"><button
+                            id="btnCambiarContrasena" class="d-flex justify-content-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg></button></label>
+                    <label for="CambiarTel" class="d-flex justify-content-between">Teléfono<input type="tel"
+                            placeholder="3219876540" id="CambiarTel" class="d-flex justify-content-between"><button
+                            id="btnCambiarTelefono" class="d-flex justify-content-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg></button></label>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" id="pieDePagina3">
+            <div class="col-12">
+                <button class="exitBtn" id="exitBtn">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg> Eliminar cuenta</h4>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Solicitar Envío--------------------------------------------->
+    <template id="solicitarEnvios">
+        <div class="row" id="encabezado">
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="Envios d-flex justify-content-between">
+                    <button id="btnHistorialEnvios" onclick="mostrarHistorialEnvios()">Historial</button><button
+                        id="btnSolicitudEnvios" onclick="mostarSolicitudEnvios()">Solicitar envio</button>
+                </div>
+                <div class="formulario" id="formSolicitarEnvio">
+                    <form method="post">
+                        <div class="birthdate d-flex">
+                            <input type="date" name="fecha" id="FechaDeNacimiento" required>
+                            <label> Fecha del intercambio</label>
+                        </div>
+                        <div class="username">
+                            <input type="number" name="cantidad_Kg" id="cantidadMateria" required>
+                            <label> cantidad (Kg)</label>
+                        </div>
+                        <select name="id_materia" id="materiaPrima" required>
+                            <label for="materiaPrima">Materia prima</label>
+                            <option value="botellas">Botellas de plastico</option>
+                            <option value="cartulina">Cartulina</option>
+                            <option value="cartoncorrugado">Cartoncorrugado</option>
+                            <option value="papelCuaderno">Papel de cuaderno</option>
+                        </select>
+                        <select name="id_categoria" id="categoriaMateria" required>
+                            <label for="categoriaMateria">categoria</label>
+                            <option value="plastico">Plástico</option>
+                            <option value="carton">Carton</option>
+                            <option value="Papel">Papel</option>
+                        </select>
+                        <div class="birthdate">
+                            <input type="text" name="ubicacion" id="ubicacion" required>
+                            <label> Dirección del envio </label>
+                        </div>
+                        <div class="confirm-password">
+                            <input type="text" name="id_empresa" required>
+                            <label> Empresa a solicitar</label>
+                        </div>
+                        <button class="agregarOtro">Agregar otro +</button>
+                        <button class="btnSolicitar">Solicitar</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </template>
+
+    <!----------------------------------------Template Pantalla Historial de Envíos--------------------------------------------->
+    <template id="historialEnvios">
+        <div class="row" id="encabezado">
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="Envios d-flex justify-content-between">
+                    <button id="btnHistorialEnvios" onclick="mostrarHistorialEnvios()">Historial</button><button
+                        id="btnSolicitudEnvios" onclick="mostarSolicitudEnvios()">Solicitar envio</button>
+                </div>
+
+                <h2 class="d-flex justify-content-center" id="detallesTitulo">Detalles</h2>
+            </div>
+            <div class="detallesEnvios">
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="1234567890"></li>
+                    <li id="estado">Estado: <input type="text" value="En proceso"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Papel"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="35 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/09/2024"></li>
+                    <li id="empresaRecolectora">Empresa recolectora: <input type="text" value="Recicorp"></li>
+                    <li id="ubicacion">Ubicación <input type="text" value="calle 123, Bogotá"></li>
+                </ul>
+                <hr>
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="0987654321"></li>
+                    <li id="estado">Estado: <input type="text" value="Recibido"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Carton"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="20 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/08/2023"></li>
+                    <li id="empresaRecolectora">Empresa recolectora: <input type="text" value="Ciudad Limpia"></li>
+                    <li id="ubicacion">Ubicación: <input type="text" value="calle 1800 bt, Bogotá"></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </template>
+
+
+    <!------------------------------------------------TEMPLATES EMPRESA----------------------------------------------------->
+
+    <!----------------------------------------Template Pantalla Menú Empresa--------------------------------------------->
+    <template id="menuDeEmpresa">
+        <div class="row" id="encabezado">
+            <!--<div class="col-12">-->
+            <div class="encabezadoMenu">
+                <div id="encabezadoIconMenu" class="d-flex justify-content-between">
+                    <button id="btnNotificationes"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                            fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg></button>
+                </div>
+                <h1 class="d-flex justify-content-center">Recicla, un pequeño gesto de gran impacto</h1>
+            </div>
+            <!--</div>-->
+        </div>
+        <div class="row" id="contenido">
+            <!--<div class="col-12">-->
+            <div class="menuButtons">
+                <button class="button1" id="btnEmpresa" onclick="mostrarEmpresas()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-buildings-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z" />
+                    </svg><br>Empresas</button>
+                <button class="button2" id="btnMapa" onclick="mostrarMapa()"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="86" height="86" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg><br>Mapa Limpio</button>
+                <button class="button2" id="btnCalendario" onclick="mostrarCalendario()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-calendar3" viewBox="0 0 16 16">
+                        <path
+                            d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                        <path
+                            d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </svg><br>Calendario</button>
+                <button class="button1" id="btnAprendeReciclar" onclick="mostrarAprenderReciclar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                    </svg><br>Aprende a reciclar</button>
+                <button class="button2" id="btnRecoleccion" onclick="mostrarSolicitudRecolecciones()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-bezier2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5h4.134a1 1 0 1 1 0 1h-2.01q.269.27.484.605C8.246 5.097 8.5 6.459 8.5 8c0 1.993.257 3.092.713 3.7.356.476.895.721 1.787.784A1.5 1.5 0 0 1 12.5 11h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5H6.866a1 1 0 1 1 0-1h1.711a3 3 0 0 1-.165-.2C7.743 11.407 7.5 10.007 7.5 8c0-1.46-.246-2.597-.733-3.355-.39-.605-.952-1-1.767-1.112A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5zM2.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10 10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                    </svg><br>Recolecciones</button>
+
+            </div>
+            <!--</div>-->
+        </div>
+
+        <!-------------------------------------------------------------Modales-->
+        <div id="menuLateral">
+            <div class="row" id="encabezadoModal">
+                <div class="col-12">
+                    <button id="flechaAtras" class="flechaAtrasMenuLateral"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="26" height="26" fill="currentColor" class="bi bi-arrow-left-short"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                        </svg></button>
+                    <img src="./Recursos/page/logo redimencionado.png" alt="logo" width="50%" id="logoMenu">
+                </div>
+            </div>
+            <div class="row" id="contenidoModal">
+                <div class="col-12">
+                    <button id="btnPerfilUsuario">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                            </svg> Perfil</h3>
+                    </button>
+                    <hr>
+                    <button id="btnConfiguracion">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
+                            </svg> Configuración</h3>
+                    </button>
+                    <hr>
+                    <button id="btnAyuda">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                            </svg> Ayuda</h3>
+                    </button>
+
+                </div>
+            </div>
+            <div class="row" id="pieDePaginaModal">
+                <div class="col-12">
+                    <button>
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                            </svg> Cerrar Sesión</h3>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="modalNotificaciones">
+            <div class="row" id="encabezadoModal">
+                <button id="flechaAtras" class="flechaAtrasMenuLateral"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="26" height="26" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                    </svg></button>
+                <div class="col-12">
+                    <h3 class="d-flex justify-content-center">Notificaciones <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg></h3>
+                </div>
+            </div>
+            <div class="row" id="contenidoModal">
+                <div class="col-12">
+                    <h4 class="d-flex justify-content-end">Marcar como leído</h4>
+                    <button class="btnNotificacion">
+                        <div class="btnContenedorNotificacion">
+                            <div class="col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                                    <path
+                                        d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                </svg>
+                            </div>
+                            <div class="col-10">
+                                <div class="textoNotificacion">
+                                    <h3>Calendario</h3>
+                                    <p>Tienes un evento nuevo! </p>
+                                    <h4 class="d-flex justify-content-end">14/02/2024</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <hr>
+                    <button class="btnNotificacion">
+                        <div class="btnContenedorNotificacion">
+                            <div class="col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            <div class="col-10">
+                                <div class="textoNotificacion">
+                                    <h3>Usuario</h3>
+                                    <p>El usuario "<strong>Usuario de google"</strong> quiere contactarse con tu empresa
+                                    </p>
+                                    <h4 class="d-flex justify-content-end">26/03/2024</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+
+                    <hr>
+                    <button class="btnNotificacion">
+                        <div class="btnContenedorNotificacion">
+                            <div class="col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                            </div>
+                            <div class="col-10">
+                                <div class="textoNotificacion">
+                                    <h3>Recolección</h3>
+                                    <p>Recoleccion pendiente </p>
+                                    <h4 class="d-flex justify-content-end">26/04/2024</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!----------------------------------------¿Template Pantalla Envios Recibidos?--------------------------------------------->
+    <template id="recoleccionDetallesEmpresa">
+        <div class="row" id="encabezado"></div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="Envios d-flex justify-content-between">
+                    <button id="btnHistorialRecoleccion"
+                        onclick="mostrarHistorialRecoleccion()">Historial</button><button id="btnSolicitudRecoleccion"
+                        onclick="mostrarSolicitudRecolecciones()">Solicitud</button>
+                </div>
+
+                <h2 class="detallesTitulo d-flex justify-content-center">Detalles</h2>
+            </div>
+            <div class="detallesEnvios">
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="1234567890"></li>
+                    <li id="estado">Estado: <input type="text" value="En proceso"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Papel"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="35 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/09/2024"></li>
+                    <li id="empresaRecolectora">Nombre del usuario: <input type="text" value="Pepito"></li>
+                    <li id="ubicacion">Ubicación <input type="text" value="calle 123, Bogotá"></li>
+                </ul>
+
+                <hr>
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="0987654321"></li>
+                    <li id="estado">Estado: <input type="text" value="Recibido"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Carton"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="20 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/08/2023"></li>
+                    <li id="empresaRecolectora">Nombre del usuario: <input type="text" value="Pepita"></li>
+                    <li id="ubicacion">Ubicación: <input type="text" value="calle 1800 bt, Bogotá"></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </template>
+
+    <!----------------------------------------¿Template Pantalla Historail Envíos Recibidos?--------------------------------------------->
+    <template id="recolecionesSolicitudEmpresa">
+        <div class="row" id="encabezado"></div>
+        <div class="row">
+            <div class="col-12" id="contenido">
+                <div class="Envios d-flex justify-content-between">
+                    <button id="btnHistorialRecoleccion"
+                        onclick="mostrarHistorialRecoleccion()">Historial</button><button id="btnSolicitudRecoleccion"
+                        onclick="mostrarSolicitudRecolecciones()">Solicitud</button>
+                </div>
+
+                <h2 class="detallesTitulo d-flex justify-content-center">Solicitudes</h2>
+            </div>
+            <div class="detallesEnvios">
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="1234567890"></li>
+                    <li id="estado">Estado: <input type="text" value="Pendiente"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Papel"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="35 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/09/2024"></li>
+                    <li id="empresaRecolectora">Nombre del usuario: <input type="text" value="Pepito"></li>
+                    <li id="ubicacion">Ubicación <input type="text" value="calle 123, Bogotá"></li>
+                    <button class="d-flex justify-content-end" id="btnContactarUsuario"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg> Comunicarse</button>
+                </ul>
+
+                <hr>
+                <ul class="detalleEnvioLista">
+                    <li id="envio">Envio: <input type="text" value="0987654321"></li>
+                    <li id="estado">Estado: <input type="text" value="Pendiente"></li>
+                    <li id="tipoDeResiduo">Tipo de residuo: <input type="text" value="Carton"></li>
+                    <li id="cantidad">Cantidad: <input type="text" value="20 Kgs"></li>
+                    <li id="Fecha">Fecha: <input type="text" value="15/08/2023"></li>
+                    <li id="empresaRecolectora">Nombre del usuario: <input type="text" value="Pepita"></li>
+                    <li id="ubicacion">Ubicación: <input type="text" value="calle 1800 bt, Bogotá"></li>
+                    <button class="d-flex justify-content-end" id="btnContactarUsuario"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg> Comunicarse</button>
+                </ul>
+
+
+            </div>
+        </div>
+    </template>
+
+
+    <!--------------------------------Controladores ---------------------------------------->
+    <!--<script src="./Vista/js/view.js"></script>-->
+    <script src="./Modelo/connect.js"></script>
+    <!--<script src="./Controlador/modals.js"></script>-->
+    <script src="./Vista/vista.js"></script>
+    <script src="./Controlador/controlador.js"></script>
+
+</body>
+
+</html>

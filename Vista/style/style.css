@@ -1,0 +1,1223 @@
+/* ----------------Estilos generales----------------*/
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+.patua-one-regular {
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.the-girl next door-regular {
+  font-family: "The Girl Next Door", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+hr {
+  width: 100%;
+}
+
+.container {
+  font-family: "Patua One", serif;
+  background-color: #EEECE8;
+  width: 430px;
+  min-width: 430px;
+  margin: 0%;
+  padding: 0%;
+  color: #283E30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+
+h4 {
+  color: grey;
+  font-size: 114%;
+
+}
+
+h3 {
+  font-size: 120%;
+  color: grey;
+}
+
+h2 {
+  font-size: 123%;
+}
+
+h1 {
+  font-size: 147%;
+}
+
+/*----------------Estilo de la pantalla general----------------*/
+.tituloPrincipal {
+  display: flex;
+  display: inline-flex;
+  background-image: url(/Recursos/page/FondoPagina.jpg);
+  background-size: cover;
+  margin: 0;
+  width: 100%;
+  border-radius: 0 0 25px 25px;
+  padding: 1%;
+}
+
+#tituloEncabezado {
+  color: #FFFFFF;
+  z-index: 2;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+#flechaAtras {
+  background: none;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+}
+
+/*flecha ibicada en perfil*/
+.flechaAtras {
+  position: relative;
+  top: -20px;
+  left: -170px;
+  display: flex;
+}
+
+/*----------------encabezado pagina principal----------------*/
+
+#encabezado {
+  padding: 0%;
+  margin: 0;
+  width: 100%;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  width: 50% auto;
+  text-align: center;
+  margin-left: 27%;
+  margin-top: 20%;
+  align-self: center;
+  margin-bottom: 10%;
+
+}
+
+
+/*  ----------------contenido----------------*/
+#contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+#btnInicioUsuario {
+  border-radius: 25px;
+  background-color: #283E30;
+  padding: 4.5%;
+  font-size: 120%;
+  margin: 5% 25%;
+}
+
+/*----------------Pie de página----------------*/
+#pieDePagina {
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+#btnFormRegis {
+  margin-left: 77px;
+  border: none;
+}
+
+#btnFormRegisEmpresa {
+  border: none;
+}
+
+#bttnRegisEmpresa {
+  border: none;
+}
+
+
+
+#manoPlaneta {
+  display: flex;
+  position: relative;
+  top: -5px;
+
+}
+
+/*----------------pantalla de inicio y pantallas de registro-------------------*/
+/*----------------encabezado----------------*/
+.titulo {
+  width: 100%;
+  text-align: center;
+  /* Alinea el texto al centro */
+  font-size: 35px;
+  margin: auto;
+  margin-top: 13%;
+  margin-bottom: 13%;
+
+}
+
+/*----------------contenido----------------*/
+
+.formulario {
+  margin: 6%;
+  top: auto;
+  background-color: #D1D5C3;
+  border-radius: 50px;
+  height: max-content;
+
+}
+
+.formulario form {
+  padding: 40px;
+  box-sizing: border-box;
+
+}
+
+.username,
+.email,
+.phone,
+.birthdate,
+.password,
+.NumNIT,
+.confirm-password {
+  position: relative;
+  border-bottom: 2px solid #A4B092;
+  margin: 30px 0;
+  width: auto;
+
+}
+
+.formulario .contraseña {
+  position: relative;
+  border-bottom: 2px solid #A4B092;
+  margin: 30px 0;
+  width: auto;
+}
+
+.username input,
+.email input,
+.phone input,
+.birthdate input,
+.password input,
+.NumNIT input,
+.confirm-password input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 21px;
+  box-sizing: 70px;
+  border-color: #A4B092;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.username label,
+.email label,
+.phone label,
+.birthdate label,
+.password label,
+.NumNIT label,
+.confirm-password label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: #B6C0A8;
+  transform: translateY(-50%);
+  font-size: 21px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+#formLogin {
+  width: 100%;
+  height: 100%;
+}
+
+.username input,
+.email input,
+.phone input,
+.birthdate input,
+.password input,
+.NumNIT input,
+.confirm-password input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 21px;
+  box-sizing: 70px;
+  border-color: #A4B092;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.username label,
+.email label,
+.phone label,
+.birthdate label,
+.password label,
+.NumNIT label,
+.confirm-password label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: #B6C0A8;
+  transform: translateY(-50%);
+  font-size: 21px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.username span::before,
+.email span::before,
+.phone span::before,
+.birthdate span::before,
+.password span::before,
+.NumNIT span::before,
+.confirm-password span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #283E30;
+  transition: .5s;
+}
+
+.username input:focus~label,
+.email input:focus~label,
+.phone input:focus~label,
+.birthdate input:focus~label,
+.password input:focus~label,
+.NumNIT input:focus~label,
+.confirm-password input:focus~label {
+  top: -5px;
+  color: #283E30;
+}
+
+.username input:focus~span:before,
+.email input:focus~span:before,
+.phone input:focus~span:before,
+.birthdate input:focus~span:before,
+.password input:focus~span:before,
+.confirm-password input:focus~span:before {
+  width: 100px;
+}
+
+.btnRecordar {
+  justify-content: flex-end;
+  margin-left: 47%;
+  margin-bottom: 15%;
+  border: none;
+  background-color: inherit;
+}
+
+
+/*----------------boton ingresar boton crear----------------*/
+
+.btnCrear {
+  width: 163px;
+  height: 54px;
+  border: 0 solid;
+  background: #283E30;
+  border-radius: 22px;
+  font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 28%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+#btningresarEmpresa {
+  width: 163px;
+  height: 54px;
+  border: 0 solid;
+  background: #283E30;
+  border-radius: 22px;
+  font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.registrarse a:hover {
+  text-decoration: underline;
+}
+
+.btnIniciarSesion {
+  color: #283E30;
+  background-color: inherit;
+  border: none;
+}
+
+/*----------------Mapa----------------*/
+#Mapa {
+  display: flex;
+  position: absolute;
+  top: -10px;
+}
+
+/*----------------Pie de pagina----------------*/
+.pieDePagina {
+  margin-bottom: 5%;
+}
+
+
+/*----------------Calendario----------------*/
+
+.calendar {
+  height: 60rem;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 5% 7%;
+  margin-top: 7%;
+}
+
+.calendar-header {
+  background: #5e695f;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 7px;
+  align-items: center;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.calendar-body {
+  padding: 10px;
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+}
+
+.calendar-week-days div:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: all .2s ease-in-out;
+}
+
+.calendar-week-days div {
+  display: grid;
+  place-items: center;
+  color: #0A0921;
+  height: 30px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: #0A0921;
+}
+
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+}
+
+.month-picker {
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.year-picker {
+  display: flex;
+  align-items: center;
+}
+
+.year-change {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.year-change:hover {
+  background-color: #253925;
+  transition: all .2s ease-in-out;
+  transform: scale(1.12);
+}
+
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#year:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2 ease-in-out;
+}
+
+.calendar-days div span {
+  position: absolute;
+}
+
+.calendar-days div:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #a4baa4;
+  border-radius: 20%;
+}
+
+.calendar-days div.current-date {
+  color: #f8fbff;
+  background-color: #253925;
+  border-radius: 20%;
+}
+
+.month-list {
+  position: relative;
+  left: 0;
+  top: -130px;
+  background-color: #ebebeb;
+  color: #151426;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1px;
+  border-radius: 10px;
+}
+
+.month-list>div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list>div>div {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.month-list>div>div:hover {
+  background-color: #a4baa4;
+  color: #f8fbff;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list.show {
+  visibility: visible;
+  pointer-events: visible;
+  transition: 0.6s ease-in-out;
+  animation: to-left .71s forwards;
+}
+
+.month-list.hideonce {
+  visibility: hidden;
+}
+
+.month-list.hide {
+  animation: to-right 1s forwards;
+  visibility: none;
+  pointer-events: none;
+}
+
+.date-time-formate {
+  height: 4rem;
+  width: 100%;
+  font-family: Dubai Light, Century Gothic;
+  position: relative;
+  display: flex;
+  top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-text-formate {
+  font-family: Microsoft JhengHei UI;
+  font-size: 1.4rem;
+  padding-right: 5%;
+  border-right: 3px solid #555557;
+}
+
+.date-time-value {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding-left: 5%;
+}
+
+.time-formate {
+  font-size: 1.5rem;
+}
+
+.time-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.hidetime {
+  animation: hidetime 1.5s forwards;
+}
+
+.date-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+.time-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+.date-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+@keyframes to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes to-left {
+  0% {
+    transform: translatex(230%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+
+@keyframes to-right {
+  10% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(-150%);
+    opacity: 1;
+  }
+}
+
+@keyframes showtime {
+  0% {
+    transform: translatex(250%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes hidetime {
+  0% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(-370%);
+    opacity: 1;
+  }
+}
+
+/* ----------------menu----------------*/
+
+.encabezadoMenu {
+  background-image: url(/Recursos/page/FondoPagina.jpg);
+  background-size: cover;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 20%;
+}
+
+.encabezadoMenu button {
+  border: none;
+  background-color: inherit;
+  color: white;
+  min-height: 10%;
+  margin: 0% 3%;
+}
+
+.encabezadoMenu h1 {
+  font-family: "The Girl Next Door", cursive;
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 5%;
+}
+
+.menuButtons {
+  display: flex;
+  position: relative;
+  top: -50px;
+  padding: 6%;
+  background-color: #ebebeb;
+  border-radius: 50px;
+  height: max-content;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: 81vh;
+  z-index: 1;
+}
+
+.menuButtons button {
+  margin: 3% 3%;
+  border: none;
+  width: 43%;
+  height: 170px;
+  border-radius: 25px;
+  color: grey;
+}
+
+.button2 {
+  background-color: #B6C0A8;
+}
+
+.button1 {
+  background-color: #D1D5C3;
+}
+
+
+
+
+
+/*-----------------paginas de parrafos y demas----------------*/
+#canecas {
+  margin: 20px 0;
+}
+
+#buscar {
+  border-radius: 25px;
+  display: flex;
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 4.5%;
+  margin-bottom: 5%;
+  padding: 1%;
+
+}
+
+#buscar ::placeholder {
+  margin-left: 5%;
+}
+
+.empresaBtnInfo {
+  display: flex;
+  display: inline-flex;
+  background-color: #A4B092;
+  border-radius: 25px;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+#logoEmpresas {
+  margin: 5%;
+  border-radius: 25px;
+  width: 100px;
+  height: 100px;
+}
+
+nav {
+  font-size: 14px;
+}
+
+.texto {
+  z-index: 1;
+  margin: 4% 0;
+  min-height: 90vh;
+
+}
+
+
+.background {
+  position: fixed;
+  opacity: 0.6;
+  z-index: 0;
+  top: 20vh;
+  left: 6vh;
+}
+
+.texto2 {
+  width: 100%;
+  display: flex;
+  display: inline-flex;
+  align-items: center;
+  z-index: 1;
+  margin: 4% 0;
+}
+
+#menuAyuda {
+  background-color: #D1D5C3;
+  border-radius: 25px;
+  width: 100%;
+  padding: 1%;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  min-height: 90vh;
+}
+
+#menuAyuda h3 {
+  margin-top: 7%;
+  margin-bottom: 4%;
+}
+
+#menuAyuda button {
+  width: 100%;
+  padding: 2%;
+  text-align: start;
+  border: none;
+  background: inherit;
+}
+
+#Engrane {
+  margin-right: 2%;
+  animation: engranaje 2s;
+  color: chartreuse;
+}
+
+#config {
+  flex-direction: column;
+  display: flex;
+  background-color: inherit;
+  border-radius: 25px;
+  width: 100%;
+  padding: 1%;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  min-height: 85vh;
+}
+
+#config h3 {
+  margin-top: 7%;
+  margin-bottom: 4%;
+}
+
+#config button {
+  width: 100%;
+  padding: 2%;
+  text-align: start;
+  border: none;
+  background: inherit;
+}
+
+#config input {
+  border: none;
+  width: 60%;
+  text-align: end;
+  background-color: inherit;
+  padding: 2% 0;
+}
+
+#CambiarPass,
+#CambiarTel {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.exitBtn {
+  width: 100%;
+  padding: 2%;
+  text-align: start;
+  border: none;
+  background: inherit;
+  margin-left: 5%;
+}
+
+.exitBtn h4 {
+  color: red;
+}
+
+.PerfilCliente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 0% 5% 0;
+  border-radius: 0 0 25px 25px;
+  background-color: #A4B092;
+}
+
+.PerfilCliente svg {
+  margin-bottom: 2%;
+}
+
+.PerfilCliente button {
+  background-color: inherit;
+  border: none;
+}
+
+/*----------------Envios----------------*/
+
+#CajaIcon {
+  color: chartreuse;
+}
+
+.Envios {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+  border: none;
+  margin-bottom: 0;
+}
+
+.Envios button {
+  width: 100%;
+  padding: 2%;
+  margin: 5% 2%;
+  border-radius: 25px;
+  background-color: #A4B092;
+  border: none;
+}
+
+.formulario select {
+  width: 100%;
+  padding: 5%;
+  background-color: inherit;
+  border: none;
+  font-size: 20px;
+  font-family: inherit;
+  color: #A4B092;
+  justify-content: start;
+  justify-self: start;
+}
+
+.btnSolicitar {
+  width: 163px;
+  height: 54px;
+  border: 0 solid;
+  background: #283E30;
+  border-radius: 22px;
+  font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.agregarOtro {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 3%;
+  width: 90%;
+  background-color: #a4baa4;
+  border-radius: 25px;
+}
+
+.detallesTitulo {
+  font-size: 23px;
+
+}
+
+.detallesEnvios {
+  text-decoration: none;
+  min-height: 90vh;
+  margin: auto;
+}
+
+.detalleEnvioLista {
+  padding: 3.4%;
+}
+
+.detalleEnvioLista input {
+  display: flex;
+  align-items: end;
+
+  border: none;
+}
+
+.detalleEnvioLista li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+}
+
+/*----------------Recolecciones----------------*/
+#iconoRecoleciones {
+  color: chartreuse;
+}
+
+.detallesEnvios button {
+  margin: 5% 0 0 66.5%;
+  background-color: #A4B092;
+  padding: 1.5%;
+  border-color: transparent;
+  border-radius: 25px;
+
+}
+
+/*----------------modales----------------*/
+.modal {
+  padding: 7%;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  left: 1vh;
+  top: -90vh;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.contenido-modal {
+  background-color: #B6C0A8;
+  text-align: center;
+  border-radius: 55px;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.contenido-modal button {
+  border-radius: 25px;
+  border: none;
+  background-color: #DAD7CD;
+  padding: 4%;
+  margin: 0 3%;
+}
+
+/*----------------menuLateralIzquierdo----------------*/
+
+/* Estilos cuando se activa la clase sliding-window-active */
+.sliding-window {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  transition: left 0.8s;
+}
+
+.sliding-window.active {
+  left: 0;
+}
+
+/* Opcional: Estilo del botón de cerrar */
+.flechaAtrasMenuLateral {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/*---------------------------------------*/
+
+#menuLateral {
+  position: absolute;
+  min-height: 100%;
+  width: 250px;
+  z-index: 2;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+#menuLateral::-webkit-scrollbar {
+  display: none;
+  /* Para navegadores basados en WebKit como Chrome y Safari */
+}
+
+#encabezadoModal {
+  width: 100%;
+  background-color: #D1D5C3;
+}
+
+.flechaAtrasMenuLateral {
+  display: flex;
+  margin: 5%;
+  background-color: #253925;
+}
+
+#encabezadoModal img {
+  margin: 1% 25% 10% 25%;
+}
+
+#contenidoModal {
+  padding: 1% 5%;
+  width: 100%;
+  background-color: #a4baa4;
+  min-height: 74vh;
+  flex: 1;
+}
+
+#contenidoModal h3 {
+  color: antiquewhite;
+}
+
+#contenidoModal svg {
+  color: chartreuse;
+}
+
+#contenidoModal button {
+  display: flex;
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  align-items: start;
+}
+
+#pieDePaginaModal {
+  padding: 5% 5%;
+  width: 100%;
+  background-color: #A4B092;
+}
+
+#pieDePaginaModal button {
+  display: flex;
+  border: none;
+  background-color: inherit;
+  width: 100%;
+}
+
+#pieDePaginaModal h3 {
+  color: antiquewhite;
+}
+
+#pieDePaginaModal svg {
+  color: chartreuse;
+}
+
+/*----------------NotificacionseMenu----------------*/
+.modal-right {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 15%;
+  transform: translate(-510%, -0%);
+  transition: right 0.8s;
+  display: none;
+  z-index: 1000;
+}
+
+.modal-right.active {
+  right: 0;
+}
+
+.flechaAtrasMenuLateral {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+/*-----------------------*/
+
+#modalNotificaciones #encabezadoModal {
+  min-height: 40vh;
+  align-items: center;
+
+}
+
+#modalNotificaciones #encabezadoModal button {
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+#modalNotificaciones #contenidoModal {
+  min-height: 72vh;
+}
+
+#modalNotificaciones h3 {
+  padding: 1% 5%;
+}
+
+#modalNotificaciones #contenidoModal h4 {
+  text-decoration: underline;
+  font-size: 14px;
+  color: antiquewhite;
+}
+
+.btnContenedorNotificacion {
+  display: flex;
+  display: inline-flex;
+}
+
+.textoNotificacion {
+  width: 100%;
+  text-align: start;
+  line-height: 14px;
+  word-spacing: 1px;
+}
+
+.btnNotificacion {
+  background-color: red;
+  border: solid;
+}
