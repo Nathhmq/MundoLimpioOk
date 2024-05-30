@@ -819,12 +819,11 @@ nav {
 
 }
 
-
 .background {
   position: fixed;
-  opacity: 0.6;
+  opacity: 0.3;
   z-index: 0;
-  top: 20vh;
+  top: 36vh;
   left: 6vh;
 }
 
@@ -928,11 +927,11 @@ nav {
   background-color: #A4B092;
 }
 
-.PerfilCliente svg {
+.perfilCliente svg {
   margin-bottom: 2%;
 }
 
-.PerfilCliente button {
+.perfilCliente button {
   background-color: inherit;
   border: none;
 }
@@ -1176,45 +1175,7 @@ nav {
   color: chartreuse;
 }
 
-/*----------------------------------------------------Modal NotificacionseMenu----*/
-#modalNotificaciones {
-  position: relative;
-  display: none;
-  top: -130vh;
-  left: 48%;
-  min-height: 100%;
-  width: 55%;
-  z-index: 2;
-  overflow: auto;
-  height: 100%;
-}
-
-#modalNotificaciones #encabezadoModal {
-  min-height: 40vh;
-  align-items: center;
-
-}
-
-#modalNotificaciones #encabezadoModal button {
-  margin-bottom: 1%;
-  margin-top: 1%;
-
-
-}
-
-#modalNotificaciones #contenidoModal {
-  min-height: 100vh;
-}
-
-#modalNotificaciones h3 {
-  padding: 1% 5%;
-}
-
-#modalNotificaciones #contenidoModal h4 {
-  text-decoration: underline;
-  font-size: 14px;
-  color: antiquewhite;
-}
+/*----------------------------------------------------------Notificaciones*/
 
 .btnContenedorNotificacion {
   display: flex;
@@ -1225,12 +1186,11 @@ nav {
   width: 100%;
   text-align: start;
   line-height: 14px;
-  word-spacing: 1px;
+  word-spacing: 10px;
 }
 
 .btnNotificacion {
-  background-color: red;
-  border: solid;
+  background-color: #A4B092;
 }
 /*----------------------------------------------------------Modales Pequeños*/
 .modalPequeño {
