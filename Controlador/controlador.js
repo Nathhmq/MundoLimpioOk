@@ -8,11 +8,6 @@ window.addEventListener('load', function () {
 function mostrarInicioUsuario() {
     vista.mostrarPlantilla('login', 'contenido');
     vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
-
-};
-
-function mostrarInicioEmpresa() {
-    vista.mostrarPlantilla('loginEmpresa', 'contenido');
 };
 
 function registrarUsuario() {
@@ -24,12 +19,7 @@ function registarEmpresa() {
 };
 
 function login() {
-    //leer datos del formlario
-    //data=
-    //consultar datos en la bd
-    //si existe desplegar ele menu de usuario
     mostrarMenuUsuario();
-    //si no existe mostrar mensaje
 };
 
 function mostrarMenuUsuario() {
@@ -41,6 +31,11 @@ function mostrarMenuUsuario() {
     });
 };
 
+function mostrarNotificaciones() {
+    vista.mostrarPlantilla('notificaciones', 'contenido');
+    vista.mostrarPlantilla('encabezado1', 'encabezado');
+    document.getElementById("tituloEncabezado").innerText = "Notificaciones";
+}
 function mostrarMenuEmpresa() {
     vista.mostrarPlantilla('menuDeEmpresa', 'contenido');
 };
@@ -81,25 +76,26 @@ function mostrarPerfilUsuario() {
     var btnEliminarCuenta = document.getElementById("btnEliminarCuenta");
     var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
     var botonCancelarEliminar = document.getElementById("botonCancelarEliminar");
-    
+
     btnEliminarCuenta.onclick = function () {
         modalEliminarCuenta.style.display = "block";
     }
-    
+
     botonAceptarEliminar.onclick = function () {
         alert("Cuenta eliminada");
         modalEliminarCuenta.style.display = "none";
     }
-    
+
     botonCancelarEliminar.onclick = function () {
         modalEliminarCuenta.style.display = "none";
     }
-    
+
     window.onclick = function (event) {
         if (event.target == modalEliminarCuenta) {
             modalEliminarCuenta.style.display = "none";
         }
-    }};
+    }
+};
 
 function mostarSobreNosotros() {
     vista.mostrarPlantilla('mundoLimpio', 'contenido');
@@ -162,9 +158,9 @@ function mostrarSolicitudRecolecciones() {
 function mostrarHistorialRecoleccion() {
     vista.mostrarPlantilla('recoleccionDetallesEmpresa', 'contenido');
 }
-//--------------------------CONTROLADOR MODALES-------------------------------------
+//-------------------------------CONTROLADOR MODALES-------------------------------------
 
-//------------------------------Menú Lateral-----------------------------------------
+//------------------------------Menú Lateral Izquierdo-----------------------------------------
 document.addEventListener('DOMContentLoaded', (event) => {
     const btnCloseMenu = document.getElementById('flechaAtras');
     const menuLateral = document.getElementById('menuLateral');
@@ -181,6 +177,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     btnPerfilUsuario.addEventListener('click', closeModal);
     btnConfiguracion.addEventListener('click', closeModal);
     btnAyuda.addEventListener('click', closeModal);
+
+    window.onclick = function (event) {
+        if (event.target == menuLateral) {
+            menuLateral.style.display = "none";
+        }
+    };
 });
 
 //-----------------------------Modal Cerrar Sesión-----------------------------------
@@ -202,5 +204,6 @@ botonCancelar.onclick = function () {
 // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo
 window.onclick = function (event) {
     if (event.target == modalCerrarSesion) {
-        modalCerrarSesion.style.display = "none";
-    }};
+        modalCerrarSesion.style.display = "none";
+    }
+};

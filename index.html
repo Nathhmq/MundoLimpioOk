@@ -44,7 +44,7 @@
                 <button id="botonConfirmarRecuperar">Confirmar</button>
             </div>
         </div>
-            
+        
     </div>
 
     <!----------------------------------------Modal Login Usuario--------------------------------------------->
@@ -57,7 +57,7 @@
                 <input type="date" class="rectanguloModal3" id="recuperarContraseñaCorreo" name="edad">
                 <button id="botonConfirmarRecuperar">Confirmar</button>
             </div>
-        </div>  
+        </div>
     </div>
 
     <!----------------------------------------Modales del Menú del Usuario--------------------------------------------->
@@ -125,10 +125,10 @@
         </div>
     </div>
 
-    <div id="modalNotificaciones" class="modal">
+    <div id="modalNotificaciones">
         <div class="row" id="encabezadoModal">
-            <button id="flechaAtras" class="flechaAtrasMenuLateral"><svg xmlns="http://www.w3.org/2000/svg" width="26"
-                    height="26" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <button id="flechaAtras" class="flechaAtrasMenuLateral"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="26" height="26" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
                 </svg></button>
@@ -164,10 +164,53 @@
                     </div>
                 </button>
                 <hr>
+                <button class="btnNotificacion">
+                    <div class="btnContenedorNotificacion">
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                        </div>
+                        <div class="col-10">
+                            <div class="textoNotificacion">
+                                <h3>Usuario</h3>
+                                <p>El usuario "<strong>Usuario de google"</strong> quiere contactarse con tu empresa
+                                </p>
+                                <h4 class="d-flex justify-content-end">26/03/2024</h4>
+                            </div>
+                        </div>
+                    </div>
+                </button>
 
+                <hr>
+                <button class="btnNotificacion">
+                    <div class="btnContenedorNotificacion">
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                            </svg>
+                        </div>
+                        <div class="col-10">
+                            <div class="textoNotificacion">
+                                <h3>Recolección</h3>
+                                <p>Recoleccion pendiente </p>
+                                <h4 class="d-flex justify-content-end">26/04/2024</h4>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <hr>
             </div>
         </div>
     </div>
+</template>
 
     <!----------------------------------------Modales del Perfil del Usuario--------------------------------------------->
 
@@ -204,7 +247,7 @@
                 <button id="botonConfirmar">Confirmar</button>
             </div>
         </div>
-            
+    
     </div>
 
 
@@ -217,7 +260,7 @@
                 <button id="botonConfirmarTelefono">Confirmar</button>
             </div>
         </div>
-            
+    
     </div>
 
 
@@ -481,6 +524,35 @@
                 </svg><br>Envios</button>
         </div>
     </template>
+
+    <!----------------------------------------Template Pantalla Menú Usuario--------------------------------------------->
+    <template id="notificaciones">
+        <div class="row" id="encabezado"></div>
+        <div class="col-12" id="contenido">
+            <h4 class="d-flex justify-content-end">Marcar como leído</h4>
+            <button class="btnNotificacion">
+                <div class="btnContenedorNotificacion">
+                    <div class="col-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-calendar3" viewBox="0 0 16 16">
+                            <path
+                                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                            <path
+                                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                    </div>
+                    <div class="col-10">
+                        <div class="textoNotificacion">
+                            <h3>Calendario</h3>
+                            <p>Tienes un evento nuevo! </p>
+                            <h4 class="d-flex justify-content-end">14/02/2024</h4>
+                        </div>
+                    </div>
+                </div>
+            </button>
+            <hr>
+        </div>
+    </template>  
 
     <!----------------------------------------Template Pantalla Mapa Limpio --------------------------------------------->
     <template id="mapaLimpio">
@@ -958,8 +1030,9 @@
         <div class="row" id="encabezado">
             <div class="col-12">
                 <div class="perfilCliente">
-                    <button id="flechaAtras" onclick="mostrarMenuUsuario()" class="flechaAtras"><svg xmlns="http://www.w3.org/2000/svg" width="26"
-                            height="26" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                    <button id="flechaAtras" onclick="mostrarMenuUsuario()" class="flechaAtras"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
                         </svg></button>
