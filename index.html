@@ -31,44 +31,16 @@
         <!---------------------------------------------------------------------------------------------pie de pagina-->
     </div>
 
-    <!----------------------------------------MODALES--------------------------------------------->
-
-    <!----------------------------------------Modal Login Empresa--------------------------------------------->
-    <div id="modalRecuperarContrasenaEmpresa" class="modal">
-        <div class="contenido-modal">
-            <h2>Recuperar contraseña</h2>
-            <div id="formRecuperarContrasena">
-                <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
-                <input type="number" class="rectanguloModal3" id="recuperarContraseñaCorreo"
-                    placeholder="Escriba el NIT" name="NIT">
-                <button id="botonConfirmarRecuperar">Confirmar</button>
-            </div>
-        </div>
-        
-    </div>
-
-    <!----------------------------------------Modal Login Usuario--------------------------------------------->
-    <div id="modalRecuperarContrasena" class="modal">
-        <div class="contenido-modal">
-            <h2>Recuperar contraseña</h2>
-            <div id="formRecuperarContrasena">
-                <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
-                <label for="recuperarContraseñaCorreo">Selecione su fecha de cumpleaños</label>
-                <input type="date" class="rectanguloModal3" id="recuperarContraseñaCorreo" name="edad">
-                <button id="botonConfirmarRecuperar">Confirmar</button>
-            </div>
-        </div>
-    </div>
-
-    <!----------------------------------------Modales del Menú del Usuario--------------------------------------------->
-    <div id="menuLateral" class="sliding-window">
-        <div class="row" id="encabezadoModal">
-            <div class="col-12">
-                <button id="flechaAtras" class="flechaAtrasMenuLateral">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                        class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+<!------------------------------------------------MODALES--------------------------------------------->
+   <!----------------------------------------Modales del Perfil del Usuario------------------------------------------->
+   <div id="menuLateral" class="sliding-window">
+    <div class="row" id="encabezadoModal">
+        <div class="col-12">
+            <button id="flechaAtras" class="flechaAtrasMenuLateral">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
                     </svg>
                 </button>
                 <img src="./Recursos/page/logo redimencionado.png" alt="logo" width="50%" id="logoMenu">
@@ -79,202 +51,118 @@
                 <button id="btnPerfilUsuario" onclick="mostrarPerfilUsuario()">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg> Perfil
-                    </h3>
-                </button>
-                <hr>
-                <button id="btnConfiguracion" onclick="mostrarConfig()">
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
-                            <path
-                                d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
-                        </svg> Configuración
-                    </h3>
-                </button>
-                <hr>
-                <button id="btnAyuda" onclick="mostrarSoporte()">
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-question-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
-                        </svg> Ayuda
-                    </h3>
-                </button>
-            </div>
-        </div>
-        <div class="row" id="pieDePaginaModal">
-            <div class="col-12">
-                <button id="btnCerrarSesion">
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
-                            <path fill-rule="evenodd"
-                                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
-                        </svg> Cerrar Sesión
-                    </h3>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalNotificaciones">
-        <div class="row" id="encabezadoModal">
-            <button id="flechaAtras" class="flechaAtrasMenuLateral"><svg xmlns="http://www.w3.org/2000/svg"
-                    width="26" height="26" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
-                </svg></button>
-            <div class="col-12">
-                <h3 class="d-flex justify-content-center">Notificaciones <svg xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg> Perfil
+                </h3>
+            </button>
+            <hr>
+            <button id="btnConfiguracion" onclick="mostrarConfig()">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
                         <path
-                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
-                    </svg></h3>
-            </div>
-        </div>
-        <div class="row" id="contenidoModal">
-            <div class="col-12">
-                <h4 class="d-flex justify-content-end">Marcar como leído</h4>
-                <button class="btnNotificacion">
-                    <div class="btnContenedorNotificacion">
-                        <div class="col-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-calendar3" viewBox="0 0 16 16">
-                                <path
-                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
-                                <path
-                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-                            </svg>
-                        </div>
-                        <div class="col-10">
-                            <div class="textoNotificacion">
-                                <h3>Calendario</h3>
-                                <p>Tienes un evento nuevo! </p>
-                                <h4 class="d-flex justify-content-end">14/02/2024</h4>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-                <hr>
-                <button class="btnNotificacion">
-                    <div class="btnContenedorNotificacion">
-                        <div class="col-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-person-check-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg>
-                        </div>
-                        <div class="col-10">
-                            <div class="textoNotificacion">
-                                <h3>Usuario</h3>
-                                <p>El usuario "<strong>Usuario de google"</strong> quiere contactarse con tu empresa
-                                </p>
-                                <h4 class="d-flex justify-content-end">26/03/2024</h4>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-
-                <hr>
-                <button class="btnNotificacion">
-                    <div class="btnContenedorNotificacion">
-                        <div class="col-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-calendar-event" viewBox="0 0 16 16">
-                                <path
-                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-                                <path
-                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                            </svg>
-                        </div>
-                        <div class="col-10">
-                            <div class="textoNotificacion">
-                                <h3>Recolección</h3>
-                                <p>Recoleccion pendiente </p>
-                                <h4 class="d-flex justify-content-end">26/04/2024</h4>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-                <hr>
-            </div>
+                            d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
+                    </svg> Configuración
+                </h3>
+            </button>
+            <hr>
+            <button id="btnAyuda" onclick="mostrarSoporte()">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                    <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                    </svg> Ayuda
+                </h3>
+            </button>
         </div>
     </div>
-</template>
-
-    <!----------------------------------------Modales del Perfil del Usuario--------------------------------------------->
-
-    <div id="modalCerrarSesion" class="modalPequeño">
-        <div class="contenido-modal">
-            <p>¿Seguro que quiere cerrar sesión?</p>
-            <button id="botonCancelar">Cancelar</button>
-            <button id="botonAceptar">Aceptar</button>
+    <div class="row" id="pieDePaginaModal">
+        <div class="col-12">
+            <button id="btnCerrarSesion">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                    </svg> Cerrar Sesión
+                </h3>
+            </button>
         </div>
     </div>
+</div>
+<div id="modalCerrarSesion" class="modalPequeño">
+    <div class="contenido-modal">
+        <p>¿Seguro que quiere cerrar sesión?</p>
+        <button id="botonCancelar">Cancelar</button>
+        <button id="botonAceptar">Aceptar</button>
+    </div>
+</div>
 
+<div id="modalEliminarCuenta" class="modalPequeño">
+    <div class="contenido-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" color="#283E30" width="60" height="60" fill="currentColor"
+        class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+        <path
+                d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+        </svg>
+        <p>¿Seguro que quiere eliminar su cuenta?</p>
+        <button id="botonCancelarEliminar">Cancelar</button>
+        <button id="botonAceptarEliminar">Aceptar</button>
+    </div>
+</div>
 
-    <div id="modalEliminarCuenta" class="modalPequeño">
-        <div class="contenido-modal">
-            <svg xmlns="http://www.w3.org/2000/svg" color="#283E30" width="60" height="60" fill="currentColor"
-                class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                <path
-                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-            </svg>
-            <p>¿Seguro que quiere eliminar su cuenta?</p>
-            <button id="botonCancelarEliminar">Cancelar</button>
-            <button id="botonAceptarEliminar">Aceptar</button>
+<div id="modalCambiarContrasena" class="modal">
+    <div class="contenido-modal">
+        <h2>Cambiar contraseña</h2>
+        <div id="formCambiarContrasena">
+            <input type="password" class="rectanguloModal3" placeholder="Contraseña actual" required>
+            <input type="password" class="rectanguloModal3" placeholder="Contraseña nueva" required>
+            <input type="password" class="rectanguloModal3" placeholder="Repetir contraseña" required>
+            <button id="botonConfirmar">Confirmar</button>
         </div>
     </div>
+</div>
 
-
-    <div id="modalCambiarContrasena" class="modal">
-        <div class="contenido-modal">
-            <h2>Cambiar contraseña</h2>
-            <div id="formCambiarContrasena">
-                <input type="password" class="rectanguloModal3" placeholder="Contraseña actual" required>
-                <input type="password" class="rectanguloModal3" placeholder="Contraseña nueva" required>
-                <input type="password" class="rectanguloModal3" placeholder="Repetir contraseña" required>
-                <button id="botonConfirmar">Confirmar</button>
-            </div>
+<div id="modalCambiarTelefono" class="modal">
+    <div class="contenido-modal">
+        <h2>Cambiar teléfono</h2>
+        <div id="formCambiartelefono">
+            <input type="tel" class="rectanguloModal3" placeholder="teléfono actual" required>
+            <input type="tel" class="rectanguloModal3" placeholder="Nuevo teléfono" required>
+            <button id="botonConfirmarTelefono">Confirmar</button>
         </div>
-    
     </div>
+        
+</div>
 
-
-    <div id="modalCambiarTelefono" class="modal">
-        <div class="contenido-modal">
-            <h2>Cambiar teléfono</h2>
-            <div id="formCambiartelefono">
-                <input type="tel" class="rectanguloModal3" placeholder="teléfono actual" required>
-                <input type="tel" class="rectanguloModal3" placeholder="Nuevo teléfono" required>
-                <button id="botonConfirmarTelefono">Confirmar</button>
-            </div>
+<div id="modalRecuperarContrasena" class="modal">
+    <div class="contenido-modal">
+        <h2>Recuperar contraseña</h2>
+        <div id="formRecuperarContrasena">
+            <input type="email" class="rectanguloModal3" placeholder="Escriba su correo" name="correo">
+            <label for="recuperarContraseñaCorreo">Selecione su fecha de cumpleaños</label>
+            <input type="date" class="rectanguloModal3" id="recuperarContraseñaCorreo" name="edad">
+            <button id="botonConfirmarRecuperar">Confirmar</button>
         </div>
-    
-    </div>
+    </div>  
+</div>
 
-
-    <div id="modalCambiarNombre" class="modal">
-        <div class="contenido-modal">
-            <h2>Cambiar Nombre</h2>
-            <div id="formCambiarNombre">
-                <input type="tel" class="rectanguloModal3" placeholder="Ingrese el nuevo nombre" required>
-                <button id="botonConfirmarNombre">Confirmar</button>
-            </div>
+<div id="modalCambiarNombre" class="modal">
+    <div class="contenido-modal">
+        <h2>Cambiar Nombre</h2>
+        <div id="formCambiarNombre">
+            <input type="tel" class="rectanguloModal3" placeholder="Ingrese el nuevo nombre" required>
+            <button id="botonConfirmarNombre">Confirmar</button>
         </div>
-            
-    </div>
-    <!------------------------------------------------TEMPLATES----------------------------------------------------->
+    </div> 
+</div>
+ <!-------------------------------------------------TEMPLATES USUARIO--------------------------------------------------------->
 
     <!----------------------------------------Templates de Encabezados --------------------------------------------->
     <template id="encabezado1">
@@ -484,7 +372,7 @@
                             <path fill-rule="evenodd"
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg></button>
-                    <button id="btnNotificationes"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                    <button id="btnNotificationes" onclick="mostrarNotificaciones()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
                             fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
@@ -552,8 +440,7 @@
             </button>
             <hr>
         </div>
-    </template>  
-
+    </template>
     <!----------------------------------------Template Pantalla Mapa Limpio --------------------------------------------->
     <template id="mapaLimpio">
         <div class="row" id="encabezado"></div>
@@ -1196,7 +1083,6 @@
         </div>
     </template>
 
-
     <!------------------------------------------------TEMPLATES EMPRESA----------------------------------------------------->
 
     <!----------------------------------------Template Pantalla Menú Empresa--------------------------------------------->
@@ -1210,7 +1096,7 @@
                             <path fill-rule="evenodd"
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg></button>
-                    <button id="btnNotificationes"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                    <button id="btnNotificationes1"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
                             fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
@@ -1447,7 +1333,7 @@
 
     </template>
 
-    <!----------------------------------------¿Template Pantalla Historail Envíos Recibidos?--------------------------------------------->
+    <!----------------------------------------¿Template Pantalla Historial Envíos Recibidos?--------------------------------------------->
     <template id="recolecionesSolicitudEmpresa">
         <div class="row" id="encabezado"></div>
         <div class="row">
