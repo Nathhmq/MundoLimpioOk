@@ -1,5 +1,6 @@
 vista = new Vista()
 usuario = new Cliente()
+empresa = new Empresa()
 
 
 window.addEventListener('load', function () {
@@ -65,18 +66,18 @@ function crearUsuario() {
 
 function crearEmpresa() {
     //leer datos de formulario
-    let data = vista.getForm("formularioempresas");
+    let data = vista.getForm("formularioEmpresas");
     //si ok, enviar datos al servidor y mostrar plantillas
     if (data.ok) {
-        usuario.register(data, function (data) {
+        empresa.register(data, function (data) {
             //verificar si respuesta ok
             if (data.success) {
                 vista.mostrarPlantilla('login', 'contenido');
                 vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
-                vista.mostrarMensaje(true, "Usuario creado.")
+                vista.mostrarMensaje(true, "Empresa creada.")
 
             } else {
-                vista.mostrarMensaje(false, "El cliente no se pudo crear.")
+                vista.mostrarMensaje(false, "La empresa no se pudo crear.")
             }
 
         })
@@ -172,6 +173,13 @@ function mostrarPerfilUsuario() {
 
     var inputEmail = document.getElementById("correoElectronico");
     inputEmail.placeholder = localStorage.getItem("email");
+
+    var inputPassword = document.getElementById("CambiarPass");
+    inputPassword.placeholder = localStorage.getItem("password");
+
+    var inputCelular = document.getElementById("cambiarTel");
+    inputCelular.placeholder = localStorage.getItem("celular");
+
 
     var modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
     var btnEliminarCuenta = document.getElementById("btnEliminarCuenta");

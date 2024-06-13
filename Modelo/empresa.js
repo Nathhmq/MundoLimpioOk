@@ -1,5 +1,5 @@
-class Empresa extends Connect{
-    constructor(){
+class Empresa extends Connect {
+    constructor() {
         super();
         this.id_empresa = 0;
         this.nombre_encargado = '';
@@ -12,7 +12,7 @@ class Empresa extends Connect{
     }
 
     //Establece los atributos de la clase 
-    setData(data){
+    setData(data) {
         this.id_empresa = data.id_empresa;
         this.nombre_encargado = data.nombre_encargado;
         this.nombre_empresa = data.nombre_empresa;
@@ -24,7 +24,7 @@ class Empresa extends Connect{
     }
 
     //Retorna un objeto con los atributos de la clase 
-    getData(){
+    getData() {
         return {
             id_empresa: parseInt(this.id_empresa),
             nombre_empresa: this.nombre_empresa,
@@ -37,30 +37,38 @@ class Empresa extends Connect{
     }
 
     //Listar todas las empresas 
-    listarEmpresas(callback){
+    listarEmpresas(callback) {
         const endpoint = 'companies';
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Datos de una empresa, por nit 
-    mostrarEmpresa(nit, callback){
+    mostrarEmpresa(nit, callback) {
         const endpoint = 'companies?nit=' + nit;
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Datos de una empresa, por PK 
-    consultarEmpresa(id_empresa, callback){
+    consultarEmpresa(id_empresa, callback) {
         const endpoint = 'companies/' + id_empresa;
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Edita campos de una empresa por PK 
-    editarEmpresa(dataReq, callback){
+    editarEmpresa(dataReq, callback) {
         const endpoint = 'companies';
         const method = 'PUT';
         this.connect(dataReq, endpoint, method, callback);
     }
-} 
+    
+    //Metodo para registrar un usuario tipo cliente
+    register(dataReq, loginCallback) {
+        const endpoint = 'empresas/register';
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+}

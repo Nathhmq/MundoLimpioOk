@@ -274,7 +274,11 @@
         <div class="row">
             <div class="col-12" id="contenido">
                 <div class="formulario" id="formEmpresa">
-                    <form id="formularioempresas">
+                    <form id="formularioEmpresas">
+                        <div class="username">
+                            <input type="text" name="nombre_encargado" id="nombreUsuario" required>
+                            <label> Nombre del encargado de las empresa </label>
+                        </div>
                         <div class="username">
                             <input type="text" name="nombre_empresa" id="nombreUsuario" required>
                             <label> Nombre de la empresa </label>
@@ -284,7 +288,7 @@
                             <label> NIT </label>
                         </div>
                         <div class="phone">
-                            <input type="tel" name="numero_contacto" id="telefono" required>
+                            <input type="tel" name="telefono" id="telefono" required>
                             <label> Número de contacto </label>
                         </div>
                         <div class="birthdate">
@@ -296,7 +300,7 @@
                             <label> Correo </label>
                         </div>
                         <div class="password">
-                            <input type="password" name="contraseña" id="contraseña" required>
+                            <input type="password" name="password" id="contraseña" required>
                             <label> Contraseña </label>
                         </div>
                         <div class="confirm-password">
@@ -304,9 +308,9 @@
                             <label> Confirmar contraseña </label>
                         </div>
                         </form>
-                        <button class="btnCrear" onclick="mostrarInicioEmpresa()">Crear</button>
+                        <button class="btnCrear" onclick="crearEmpresa()">Crear</button>
                     <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
-                            onclick="mostrarInicioEmpresa()">Inicia sesión</button>.</h4>
+                            onclick="mostrarInicioUsuario()">Inicia sesión</button>.</h4>
                 </div>
 
             </div>
@@ -353,7 +357,6 @@
                             id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
                     </h4>
                 </div>
-
             </div>
         </div>
 
@@ -953,8 +956,8 @@
                                 <path fill-rule="evenodd"
                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                             </svg></button></label>
-                    <label for="CambiarTel" class="d-flex justify-content-between">Teléfono<input type="tel"
-                            placeholder="3219876540" id="CambiarTel" class="d-flex justify-content-between"><button
+                    <label for="cambiarTel" class="d-flex justify-content-between">Teléfono<input type="tel"
+                            placeholder="3219876540" id="cambiarTel" class="d-flex justify-content-between"><button
                             id="btnCambiarTelefono" class="d-flex justify-content-end"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -1373,6 +1376,7 @@
     <script src="./Modelo/connect.js"></script>
     <script src="./Vista/js/vista.js"></script>
     <script src="./Modelo/cliente.js"></script>
+    <script src="./Modelo/empresa.js"></script>
     <script src="./Controlador/controlador.js"></script>
 </body>
 
