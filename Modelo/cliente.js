@@ -1,11 +1,10 @@
-class usuario extends Connect {
+class Cliente extends Connect {
     constructor() {
         super();
         this.id_usuario = 0;
         this.nombre = "";
         this.correo = "";
         this.celular = "";
-        this.fecha_nacimiento = "";
         this.tipo = "";
         this.password = "";
     }
@@ -15,9 +14,17 @@ class usuario extends Connect {
         this.nombre = data.nombre;
         this.correo = data.correo;
         this.celular = data.celular;
-        this.fecha_nacimiento = data.fechaNacimiento;
         this.tipo = data.tipo;
         this.password = data.password; //Solo para registro
+    }
+
+    getData() {
+        return {
+            id: this.id,
+            name: this.nombre,
+            email: this.correo,
+            tipo: this.tipo
+        };
     }
 
 
@@ -28,5 +35,11 @@ class usuario extends Connect {
         this.connect(dataReq, endpoint, method, loginCallback);
     }
 
+    //Metodo para registrar un usuario tipo cliente
+    register(dataReq, loginCallback) {
+        const endpoint = 'clientes/register';
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
 
 }

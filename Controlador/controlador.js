@@ -1,4 +1,6 @@
 vista = new Vista()
+usuario = new Cliente()
+
 
 window.addEventListener('load', function () {
     vista.mostrarPlantilla('paginaInicio', 'contenido');
@@ -10,6 +12,78 @@ function mostrarInicioUsuario() {
     vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
 };
 
+function ingresar() {
+    let req = vista.getForm('formLogin');
+    if (req.ok) {
+        //Validar datos en la tabla clientes o empresas
+        usuario.login(req, function (data) {
+            if (data.success) {
+                if (data.cant == 0) {
+                    vista.mostrarMensaje(false, "Usuario o contraseña incorrectos");
+                    return;
+                }
+                let usuario1 = data.data[0]
+                //Redirigir a la pantalla correspondiente
+                if (usuario1.tipo == 'cliente') {
+                    usuario.setData(usuario1);
+                    localStorage.setItem("email", req.correo);
+                    localStorage.setItem("password", req.password);
+                    localStorage.setItem("nombre", usuario1.nombre);
+                    localStorage.setItem("celular", usuario1.celular);
+                    mostrarMenuUsuario();
+                } else {
+                    empresa.setData(usuario1);
+                    mostrarMenuEmpresa();
+                }
+            } else {
+                vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
+            }
+        });
+    }
+}
+
+function crearUsuario() {
+    //leer datos de formulario
+    let data = vista.getForm("formRegistroUsuario");
+    //si ok, enviar datos al servidor y mostrar plantillas
+    if (data.ok) {
+        usuario.register(data, function (data) {
+            //verificar si respuesta ok
+            if (data.success) {
+                vista.mostrarPlantilla('login', 'contenido');
+                vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
+                vista.mostrarMensaje(true, "Usuario creado.")
+
+            } else {
+                vista.mostrarMensaje(false, "El cliente no se pudo crear.")
+            }
+
+        })
+
+    }
+};
+
+function crearEmpresa() {
+    //leer datos de formulario
+    let data = vista.getForm("formularioempresas");
+    //si ok, enviar datos al servidor y mostrar plantillas
+    if (data.ok) {
+        usuario.register(data, function (data) {
+            //verificar si respuesta ok
+            if (data.success) {
+                vista.mostrarPlantilla('login', 'contenido');
+                vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
+                vista.mostrarMensaje(true, "Usuario creado.")
+
+            } else {
+                vista.mostrarMensaje(false, "El cliente no se pudo crear.")
+            }
+
+        })
+
+    }
+};
+
 function registrarUsuario() {
     vista.mostrarPlantilla('formRegisUsuario', 'contenido');
 }
@@ -18,9 +92,6 @@ function registarEmpresa() {
     vista.mostrarPlantilla('formularioEmpresa', 'contenido');
 };
 
-function login() {
-    mostrarMenuUsuario();
-};
 
 function mostrarMenuUsuario() {
     vista.mostrarPlantilla('menuDeUsuario', 'contenido');
@@ -28,6 +99,7 @@ function mostrarMenuUsuario() {
 
     btnMenuLateral.addEventListener('click', () => {
         menuLateral.classList.add('active');
+
     });
 };
 
@@ -68,10 +140,39 @@ function mostrarEnvios() {
     vista.mostrarPlantilla('solicitarEnvios', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
+
+    const selectElement = document.getElementById('categoriaMateria');
+        const descripcionElement = document.getElementById('descripcion');
+
+        // Descripciones para cada opción
+        const descripciones = {
+            plastico: "Botellas de agua, envases de alimentos, bolsas de plastico y envases de detergentes",
+            carton: "Cajas de carton.",
+            papel: "Periodicos, revistas y papel de oficina.",
+            metales: "Latas de aluminio, latas de acero y envases de metal",
+            textiles: "Ropa y ropa de cama",
+            vidrio: "Botellas de vidrio, frascos y tarros."
+        };
+
+        // Actualiza la descripción según la opción seleccionada
+        selectElement.addEventListener('change', function() {
+            const selectedValue = selectElement.value;
+            descripcionElement.textContent = descripciones[selectedValue] || '';
+        });
+
+        // Inicializa con la primera descripción
+        descripcionElement.textContent = descripciones[selectElement.value];
 };
 
 function mostrarPerfilUsuario() {
     vista.mostrarPlantilla('perfilUsuario', 'contenido');
+
+    var labelNombre = document.getElementById("labelNombre");
+    labelNombre.innerHTML = localStorage.getItem("nombre");
+
+    var inputEmail = document.getElementById("correoElectronico");
+    inputEmail.placeholder = localStorage.getItem("email");
+
     var modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
     var btnEliminarCuenta = document.getElementById("btnEliminarCuenta");
     var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
@@ -171,12 +272,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const btnPerfilUsuario = document.getElementById('btnPerfilUsuario');
     const btnConfiguracion = document.getElementById('btnConfiguracion');
     const btnAyuda = document.getElementById('btnAyuda');
+    const btnCerrarSesion = document.getElementById('btnCerrarSesion')
     const closeModal = () => {
         menuLateral.classList.remove('active');
     };
     btnPerfilUsuario.addEventListener('click', closeModal);
     btnConfiguracion.addEventListener('click', closeModal);
     btnAyuda.addEventListener('click', closeModal);
+    btnCerrarSesion.addEventListener('click', closeModal);
 
     window.onclick = function (event) {
         if (event.target == menuLateral) {
@@ -192,10 +295,10 @@ var btnCerrarSesion = document.getElementById("btnCerrarSesion");// Obtener el b
 var botonAceptar = document.getElementById("botonAceptar");
 var botonCancelar = document.getElementById("botonCancelar");
 btnCerrarSesion.onclick = function () {// Cuando se hace clic en el botón, abrir el modal 
-    modalPequeño.style.display = "block";
+    modalCerrarSesion.style.display = "block";
 }
 botonAceptar.onclick = function () {// Cuando se hace clic en el botón de aceptar, realizar alguna acción (aquí puedes agregar tu lógica)
-    alert("Acción aceptada");// Por ejemplo, podrías mostrar un mensaje de confirmación
+    vista.mostrarPlantilla('paginaInicio', 'contenido');// Por ejemplo, podrías mostrar un mensaje de confirmación
     modalCerrarSesion.style.display = "none"; // Cerrar el modal después de la acción
 }
 botonCancelar.onclick = function () {
@@ -204,6 +307,6 @@ botonCancelar.onclick = function () {
 // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo
 window.onclick = function (event) {
     if (event.target == modalCerrarSesion) {
-        modalCerrarSesion.style.display = "none";
+        modalCerrarSesion.style.display = "block";
     }
 };

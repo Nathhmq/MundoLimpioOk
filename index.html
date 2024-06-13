@@ -31,30 +31,30 @@
         <!---------------------------------------------------------------------------------------------pie de pagina-->
     </div>
 
-<!------------------------------------------------MODALES---------------------------------------------------------->
+    <!------------------------------------------------MODALES---------------------------------------------------------->
     <!----------------------------------------Modales del Perfil del Usuario------------------------------------------->
     <div id="menuLateral" class="sliding-window">
         <div class="row" id="encabezadoModal">
             <div class="col-12">
                 <button id="flechaAtras" class="flechaAtrasMenuLateral">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                    class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
+                        class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
                             d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
-                        </svg>
-                    </button>
-                    <img src="./Recursos/page/logo redimencionado.png" alt="logo" width="50%" id="logoMenu">
-                </div>
+                    </svg>
+                </button>
+                <img src="./Recursos/page/logo redimencionado.png" alt="logo" width="50%" id="logoMenu">
             </div>
-            <div class="row" id="contenidoModal">
-                <div class="col-12">
-                    <button id="btnPerfilUsuario" onclick="mostrarPerfilUsuario()">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        </div>
+        <div class="row" id="contenidoModal">
+            <div class="col-12">
+                <button id="btnPerfilUsuario" onclick="mostrarPerfilUsuario()">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                             <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                         </svg> Perfil
                     </h3>
                 </button>
@@ -72,9 +72,9 @@
                 <button id="btnAyuda" onclick="mostrarSoporte()">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-question-circle-fill" viewBox="0 0 16 16">
-                        <path
-                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                            class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
                         </svg> Ayuda
                     </h3>
                 </button>
@@ -103,12 +103,13 @@
             <button id="botonAceptar">Aceptar</button>
         </div>
     </div>
-    
+
+
     <div id="modalEliminarCuenta" class="modalPequeño">
         <div class="contenido-modal">
             <svg xmlns="http://www.w3.org/2000/svg" color="#283E30" width="60" height="60" fill="currentColor"
-            class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-            <path
+                class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+                <path
                     d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
             </svg>
             <p>¿Seguro que quiere eliminar su cuenta?</p>
@@ -116,7 +117,7 @@
             <button id="botonAceptarEliminar">Aceptar</button>
         </div>
     </div>
-    
+
     <div id="modalCambiarContrasena" class="modal">
         <div class="contenido-modal">
             <h2>Cambiar contraseña</h2>
@@ -128,7 +129,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="modalCambiarTelefono" class="modal">
         <div class="contenido-modal">
             <h2>Cambiar teléfono</h2>
@@ -152,7 +153,7 @@
             </div>
         </div>  
     </div>
-    
+
     <div id="modalCambiarNombre" class="modal">
         <div class="contenido-modal">
             <h2>Cambiar Nombre</h2>
@@ -162,7 +163,7 @@
             </div>
         </div> 
     </div>
-<!-------------------------------------------------TEMPLATES USUARIO--------------------------------------------------------->
+    <!-------------------------------------------------TEMPLATES USUARIO--------------------------------------------------------->
 
     <!----------------------------------------Templates de Encabezados --------------------------------------------->
     <template id="encabezado1">
@@ -243,7 +244,7 @@
             <div class="col-12">
                 <div class="contenido">
                     <div class="formulario">
-                        <form method="post" id="formLogin">
+                        <form id="formLogin">
                             <div class="username">
                                 <input type="text" name="correo" required>
                                 <label> Correo</label>
@@ -253,7 +254,7 @@
                                 <label>Contraseña</label>
                             </div>
                         </form>
-                        <button class="btnCrear" id="btnIngresar" onclick="login()">Ingresar</button>
+                        <button class="btnCrear" id="btnIngresar" onclick="ingresar()">Ingresar</button>
                         <button class="btnRecordar" id="recordar">Recuperar contraseña</button>
                     </div>
                 </div>
@@ -273,7 +274,7 @@
         <div class="row">
             <div class="col-12" id="contenido">
                 <div class="formulario" id="formEmpresa">
-                    <form method="post">
+                    <form id="formularioempresas">
                         <div class="username">
                             <input type="text" name="nombre_empresa" id="nombreUsuario" required>
                             <label> Nombre de la empresa </label>
@@ -302,8 +303,8 @@
                             <input type="password" name="confirm-password" required>
                             <label> Confirmar contraseña </label>
                         </div>
+                        </form>
                         <button class="btnCrear" onclick="mostrarInicioEmpresa()">Crear</button>
-                    </form>
                     <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
                             onclick="mostrarInicioEmpresa()">Inicia sesión</button>.</h4>
                 </div>
@@ -325,9 +326,9 @@
         <div class="row">
             <div class="col-12" id="contenido">
                 <div class="formulario" id="formUsuario">
-                    <form method="post">
+                    <form id="formRegistroUsuario">
                         <div class="username">
-                            <input type="text" name="nombre" id="nombreUsuario" required>
+                            <input type="text" name="nombre" id="nombre" required>
                             <label> Nombre </label>
                         </div>
                         <div class="email">
@@ -335,26 +336,22 @@
                             <label> Email </label>
                         </div>
                         <div class="phone">
-                            <input type="tel" name="numero_contacto" id="NumeroCelular" required>
+                            <input type="tel" name="celular" id="numeroCelular" required>
                             <label> Celular </label>
                         </div>
-                        <div class="birthdate">
-                            <input type="date" name="fecha_nacimiento" id="FechaDeNacimiento" required>
-                            <label> Fecha de nacimiento </label>
-                        </div>
                         <div class="password">
-                            <input type="password" name="contraseña" id="Contraseña" required>
+                            <input type="password" name="password" id="Contraseña" required>
                             <label> Contraseña </label>
                         </div>
                         <div class="confirm-password">
                             <input type="password" name="confirm-password" required>
                             <label> Confirmar contraseña </label>
                         </div>
-                        <button class="btnCrear" onclick="mostrarInicioUsuario()">Crear</button>
-                        <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
-                                id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
-                        </h4>
                     </form>
+                    <button class="btnCrear" onclick="crearUsuario()">Crear</button>
+                    <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
+                            id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
+                    </h4>
                 </div>
 
             </div>
@@ -372,8 +369,9 @@
                             <path fill-rule="evenodd"
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg></button>
-                    <button id="btnNotificationes" onclick="mostrarNotificaciones()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
-                            fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <button id="btnNotificationes" onclick="mostrarNotificaciones()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-bell-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
                         </svg></button>
@@ -929,7 +927,7 @@
                         <path fill-rule="evenodd"
                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                     </svg>
-                    <h2>Nombre del usuario <button id="btnCambiarNombre"><svg xmlns="http://www.w3.org/2000/svg"
+                    <h2><span id="labelNombre">nombre del usuario</span><button id="btnCambiarNombre"><svg xmlns="http://www.w3.org/2000/svg"
                                 width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
                                 viewBox="0 0 16 16">
                                 <path
@@ -993,54 +991,39 @@
                     <button id="btnHistorialEnvios" onclick="mostrarHistorialEnvios()">Historial</button><button
                         id="btnSolicitudEnvios" onclick="mostarSolicitudEnvios()">Solicitar envio</button>
                 </div>
-                <div class="formulario" id="formSolicitarEnvio">
-                    <form method="post">
-                        <div class="birthdate d-flex">
-                            <input type="date" name="fecha" id="FechaDeNacimiento" required>
-                            <label> Fecha del intercambio</label>
-                        </div>
-                        <div class="username">
-                            <input type="number" name="cantidad_Kg" id="cantidadMateria" required>
-                            <label> cantidad (Kg)</label>
-                        </div>
-                        <!--<div class="material">
-                            <input type="text" name="id_materia" id="materiaPrima" required>
-                            <label> Materia prima </label>
-                        </div>-->
-                        <select name="id_materia" id="materiaPrima" required>
-                            <label for="materiaPrima">Materia prima</label>
-                            <option value="botellas">Botellas de plastico</option>
-                            <option value="cartulina">Cartulina</option>
-                            <option value="cartoncorrugado">Cartoncorrugado</option>
-                            <option value="papelCuaderno">Papel de cuaderno</option>
-                        </select>
-                        <!--<div class="phone">
-                            <input type="tel" name="id_categoria" id="NumeroCelular" required>
-                            <label> Categoria </label>
-                        </div>-->
-                        <select name="id_categoria" id="categoriaMateria" required>
-                            <label for="categoriaMateria">categoria</label>
-                            <option value="plastico">Plástico</option>
-                            <option value="carton">Carton</option>
-                            <option value="Papel">Papel</option>
-                        </select>
-
-                        <div class="birthdate">
-                            <input type="text" name="ubicacion" id="ubicacion" required>
-                            <label> Dirección del envio </label>
-                        </div>
+                <div class="formulario">
+                    <form id="formSolicitarEnvio">
                         <div class="confirm-password">
                             <input type="text" name="id_empresa" required>
                             <label> Empresa a solicitar</label>
                         </div>
+                        <div class="birthdate">
+                            <input type="text" name="ubicacion" id="ubicacion" required>
+                            <label> Dirección del envio </label>
+                        </div>
+                        <div class="birthdate d-flex">
+                            <input type="date" name="fecha" id="FechaDeNacimiento" required>
+                            <label> Fecha</label>
+                        </div>
+                        <select name="id_categoria" id="categoriaMateria" required>
+                            <label for="categoriaMateria">Categoria</label>
+                            <option value="plastico">Plástico</option>
+                            <option value="carton">Carton</option>
+                            <option value="papel">Papel</option>
+                            <option value="metales">Metales</option>
+                            <option value="textiles">Textiles</option>
+                            <option value="vidrio">Vidrio</option>
+                        </select>
+                        <div id="descripcion" class="description"></div>
+                        <div class="username">
+                            <input type="number" name="cantidad_Kg" id="cantidadMateria" required>
+                            <label> Cantidad (Kg)</label>
+                        </div>
+                        </form>
                         <button class="agregarOtro">Agregar otro +</button>
                         <button class="btnSolicitar">Solicitar</button>
-                    </form>
-
                 </div>
-
             </div>
-        </div>
         </div>
     </template>
 
@@ -1387,12 +1370,10 @@
 
 
     <!--------------------------------Controladores ---------------------------------------->
-    <!--<script src="./Vista/js/view.js"></script>-->
     <script src="./Modelo/connect.js"></script>
-    <!--<script src="./Controlador/modals.js"></script>-->
-    <script src="./Vista/vista.js"></script>
+    <script src="./Vista/js/vista.js"></script>
+    <script src="./Modelo/cliente.js"></script>
     <script src="./Controlador/controlador.js"></script>
-
 </body>
 
 </html>
