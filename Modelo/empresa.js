@@ -38,28 +38,28 @@ class Empresa extends Connect {
 
     //Listar todas las empresas 
     listarEmpresas(callback) {
-        const endpoint = 'companies';
+        const endpoint = 'empresas';
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Datos de una empresa, por nit 
     mostrarEmpresa(nit, callback) {
-        const endpoint = 'companies?nit=' + nit;
+        const endpoint = 'empresas?nit=' + nit;
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Datos de una empresa, por PK 
     consultarEmpresa(id_empresa, callback) {
-        const endpoint = 'companies/' + id_empresa;
+        const endpoint = 'empresas/' + id_empresa;
         const method = 'GET';
         this.connect({}, endpoint, method, callback);
     }
 
     //Edita campos de una empresa por PK 
     editarEmpresa(dataReq, callback) {
-        const endpoint = 'companies';
+        const endpoint = 'empresas';
         const method = 'PUT';
         this.connect(dataReq, endpoint, method, callback);
     }

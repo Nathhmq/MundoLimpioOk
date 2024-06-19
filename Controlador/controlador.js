@@ -85,6 +85,43 @@ function crearEmpresa() {
     }
 };
 
+function listarEmpresas() {
+    empresa.listarEmpresas(function (data) {
+        if (data.success) {
+            //Recorrer la data y adaptar la estructura al metodo mostrarTarjetas de la clase Vista
+            dataView = []
+            data.data.forEach(element => {
+                let empresa = {}
+                empresa.title = element.nombre_empresa;
+                empresa.subTitle = element.nombre_encargado;
+                empresa.paragraph = 'Dirección:&emsp;&emsp;' + element.direccion +
+                    '<br>Teléfono:&emsp;&emsp;' + element.telefono + '<br>Correo E:&emsp;&emsp;' + element.correo;
+                empresa.function = 'mostrarEmpresa(' + element.NIT + ')';
+                dataView.push(empresa);
+            });
+
+            vista.limpiarArea("contenido1")
+            vista.mostrarPlantilla('encabezado1', 'encabezado');
+            document.getElementById("tituloEncabezado").innerText = "Empresas";
+
+            vista.mostrarTarjetas('Listado de Empresas Recolectoras', dataView, 'contenido1');
+        } else {
+            console.log('Error al listar empresas');
+        }
+    });
+}
+
+function mostrarEmpresa(nit) {
+    empresa.mostrarEmpresa(nit, function (data) {
+        if (data.success) {
+            vista.mostrarUnaTarjeta('Empresa Recolectora', data.data[0], 'contenido1');
+        } else {
+            console.log('Error al mostrar empresa');
+        }
+    });
+}
+
+
 function registrarUsuario() {
     vista.mostrarPlantilla('formRegisUsuario', 'contenido');
 }
@@ -92,7 +129,6 @@ function registrarUsuario() {
 function registarEmpresa() {
     vista.mostrarPlantilla('formularioEmpresa', 'contenido');
 };
-
 
 function mostrarMenuUsuario() {
     vista.mostrarPlantilla('menuDeUsuario', 'contenido');
@@ -117,7 +153,8 @@ function mostrarEmpresas() {
     vista.mostrarPlantilla('listaEmpresa', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Empresas";
-};
+}
+
 
 function mostrarMapa() {
     vista.mostrarPlantilla('mapaLimpio', 'contenido');
@@ -129,6 +166,7 @@ function mostrarCalendario() {
     vista.mostrarPlantilla('calendario', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Calendario";
+
 };
 
 function mostrarAprenderReciclar() {
@@ -143,26 +181,26 @@ function mostrarEnvios() {
     document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
 
     const selectElement = document.getElementById('categoriaMateria');
-        const descripcionElement = document.getElementById('descripcion');
+    const descripcionElement = document.getElementById('descripcion');
 
-        // Descripciones para cada opción
-        const descripciones = {
-            plastico: "Botellas de agua, envases de alimentos, bolsas de plastico y envases de detergentes",
-            carton: "Cajas de carton.",
-            papel: "Periodicos, revistas y papel de oficina.",
-            metales: "Latas de aluminio, latas de acero y envases de metal",
-            textiles: "Ropa y ropa de cama",
-            vidrio: "Botellas de vidrio, frascos y tarros."
-        };
+    // Descripciones para cada opción
+    const descripciones = {
+        plastico: "Botellas de agua, envases de alimentos, bolsas de plastico y envases de detergentes",
+        carton: "Cajas de carton.",
+        papel: "Periodicos, revistas y papel de oficina.",
+        metales: "Latas de aluminio, latas de acero y envases de metal",
+        textiles: "Ropa y ropa de cama",
+        vidrio: "Botellas de vidrio, frascos y tarros."
+    };
 
-        // Actualiza la descripción según la opción seleccionada
-        selectElement.addEventListener('change', function() {
-            const selectedValue = selectElement.value;
-            descripcionElement.textContent = descripciones[selectedValue] || '';
-        });
+    // Actualiza la descripción según la opción seleccionada
+    selectElement.addEventListener('change', function () {
+        const selectedValue = selectElement.value;
+        descripcionElement.textContent = descripciones[selectedValue] || '';
+    });
 
-        // Inicializa con la primera descripción
-        descripcionElement.textContent = descripciones[selectElement.value];
+    // Inicializa con la primera descripción
+    descripcionElement.textContent = descripciones[selectElement.value];
 };
 
 function mostrarPerfilUsuario() {

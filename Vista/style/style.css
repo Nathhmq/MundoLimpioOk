@@ -49,13 +49,13 @@ h4 {
 
 h3 {
   font-size: 120%;
-  color: grey;
+  color: #283E30;
   /*margin-left: 32%;*/
 }
 
 h2 {
   font-size: 123%;
-  /*margin-left: 10%;*/
+  margin: 15px;
 }
 
 h1 {
@@ -79,7 +79,7 @@ h1 {
   color: #FFFFFF;
   z-index: 2;
   margin-top: 5%;
-  justify-content: center;
+  margin-right: 11%;
 }
 
 #flechaAtras {
@@ -190,21 +190,24 @@ h1 {
 /*---------------------------------------------------------------------------------Contenidos-----------------*/
 
 /*----------------------------------------------------------------------------------Estilo para el formulario*/
+
+
 .formulario {
   margin: 6%;
   top: auto;
   background-color: #D1D5C3;
   border-radius: 50px;
   height: max-content;
-
+  border-color: #283E30;
+  
 }
 
+
 .formulario form {
-  padding: 15% 10%;
+  padding: 40px;
   box-sizing: border-box;
 
 }
-
 .username,
 .email,
 .phone,
@@ -214,10 +217,18 @@ h1 {
 .confirm-password {
   position: relative;
   border-bottom: 2px solid #A4B092;
-  margin: 30px 0;
+  margin: 10px 0;
   width: auto;
 
 }
+
+/*.formulario {
+  display: flex;
+  width: 100% auto;
+  border-bottom: 2px solid #A4B092;
+  border: 0;
+
+}*/
 
 .formulario .contraseña {
   position: relative;
@@ -241,13 +252,52 @@ h1 {
   border-color: #A4B092;
   background: none;
   outline: none;
-  border: none;
+  /**border-color: #A4B092;*/
+  /**border: none;*/
 }
 
-#formLogin {
+/*.username label,
+.email label,
+.phone label,
+.birthdate label,
+.password label,
+.NumNIT  label,
+.confirm-password label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: #B6C0A8;
+  transform: translateY(-50%);
+  font-size: 21px;
+  pointer-events: none;
+  transition: .5s;
+}*/
+
+/*.formulario input[type="text"],
+.formulario input[type="password"] {
+  width: 100%; /* Ocupar todo el ancho del contenedor width: calc(100% - 12px) */
+/*   padding: 5px; /* Espaciado interno del campo */
+/*  border: none; /* Eliminar borde del campo */
+/*  border-radius: 5px; /* Borde redondeado */
+/*  text-align: left; /* Posiciona el texto al principio del campo */
+/*}*/
+
+#FormLogin {
   width: 100%;
   height: 100%;
 }
+
+/*.contraseña input:focus ~ label,
+.contraseña input:focus ~ label {
+  top: -5px;
+  color: #283E30;
+}*/
+
+/*.contraseña input:focus ~ span:before,
+.contraseña input:focus ~ span:before {
+  width: 100px;
+}*/
+
 
 .username input,
 .email input,
@@ -262,12 +312,15 @@ h1 {
   font-size: 21px;
   box-sizing: 70px;
   border-color: #A4B092;
-  background: none;
+  /**background: none;*/
+  background-color: #DAD7CD;
   outline: none;
-  border: none;
+  /*border-color: #5e695f;*/
+  border-radius: 10px;
+  /**border: none;*/
 }
 
-.username label,
+/*.username label,
 .email label,
 .phone label,
 .birthdate label,
@@ -278,11 +331,11 @@ h1 {
   top: 20px;
   left: 10px;
   color: #B6C0A8;
-  transform: translateY(-150%);
+  transform: translateY(-60%);
   font-size: 21px;
   pointer-events: none;
   transition: .5s;
-}
+}*/
 
 .username span::before,
 .email span::before,
@@ -301,23 +354,23 @@ h1 {
   transition: .5s;
 }
 
-.username input:focus~label,
-.email input:focus~label,
-.phone input:focus~label,
-.birthdate input:focus~label,
-.password input:focus~label,
-.NumNIT input:focus~label,
-.confirm-password input:focus~label {
+.username input:focus ~ label,
+.email input:focus ~ label,
+.phone input:focus ~ label,
+.birthdate input:focus ~ label,
+.password input:focus ~ label,
+.NumNIT input:focus ~ label,
+.confirm-password input:focus ~ label {
   top: -5px;
   color: #283E30;
 }
 
-.username input:focus~span:before,
-.email input:focus~span:before,
-.phone input:focus~span:before,
-.birthdate input:focus~span:before,
-.password input:focus~span:before,
-.confirm-password input:focus~span:before {
+.username input:focus ~ span:before,
+.email input:focus ~ span:before,
+.phone input:focus ~ span:before,
+.birthdate input:focus ~ span:before,
+.password input:focus ~ span:before,
+.confirm-password input:focus ~ span:before {
   width: 100px;
 }
 
@@ -328,7 +381,6 @@ h1 {
   border: none;
   background-color: inherit;
 }
-
 
 /*----------------------------------------------------boton ingresar boton crear*/
 /*input[type = "submit"]{   
@@ -703,7 +755,7 @@ h1 {
 .menuButtons {
   display: flex;
   position: relative;
-  top: -50px;
+  top: -70px;
   padding: 6%;
   background-color: #ebebeb;
   border-radius: 50px;

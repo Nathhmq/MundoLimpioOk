@@ -19,7 +19,7 @@ class Vista {
         }
     }
     limpiarArea(areaDeTrabajo) {
-        document.getElementById(areaDeTrabajo).innerHTML
+        document.getElementById(areaDeTrabajo).innerHTML="";
     }
 
 
@@ -87,9 +87,131 @@ class Vista {
     }
 
 
-    /**avanzarPantalla(pantalla){
-        this.stack.push(pantalla);
-        this.mostrarPantalla()
-    }*/
-
-}  
+    /**
+    * A partir de un objeto data,
+    * cargar los valores en los inputs de un formulario según cada atributo name
+    * @param {str} formulario: id del formulario a cargar
+    * @param {obj} data: objeto con los datos a cargar en el formulario
+    */
+    setForm(formulario, data) {
+        let form = document.getElementById(formulario);
+        for (let key in data) {
+            form[key].value = data[key];
+        }
+    }
+    /**
+    * Crea una tabla con los datos de la lista data
+    * le agrega un encabezado con el titulo
+    * agraga clases de bootstrap para darle formato
+    * y la despliega en el contenedor destino
+    * @param {str} titulo : Titulo del encabezado de la tabla
+    * @param {list} data : Lista de objetos con los datos a desplegar en la tabla
+    * @param {str} destino : id del contenedor donde se desplegará la tabla
+    */
+    mostrarTabla(titulo, data, destino) {
+        //Crea el titulo
+        let h2 = document.createElement('h2');
+        h2.textContent = titulo;
+        //Crea la tabla
+        let tabla = document.createElement('table');
+        let tbody = document.createElement('tbody'); // Crea el elemento tbody
+        tabla.appendChild(tbody); // Agrega el tbody a la tabla
+        tbody.innerHTML = '';
+        data.forEach(element => {
+            let tr = document.createElement('tr');
+            for (let key in element) {
+                let td = document.createElement('td');
+                td.textContent = element[key];
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        });
+        //agrega clases de bootstrap
+        tabla.classList.add('table', 'table-striped');
+        //Despliega la tabla en el contenedor destino
+        let dest = document.getElementById(destino);
+        dest.innerHTML = '';
+        dest.appendChild(tabla);
+    }
+    /**
+    * Crea una lista de tarjetas con los datos de la lista data
+    * le agrega un encabezado con el titulo
+    * agraga clases de bootstrap para darle formato
+    * y la despliega en el contenedor destino
+    * @param {str} titulo : Titulo del encabezado de la lista
+    * @param {list} data : Lista de objetos con los datos a desplegar en la lista
+    * con la siguiente estructura:
+    * {
+    "title": 'x',
+    "subTitle": 'x',
+    "paragraph" : 'x',
+    "function" : 'x' (función a ejecutar al hacer click en el botón 'ver más')
+    }
+    * @param {str} destino : id del contenedor donde se desplegará la lista
+    */
+    mostrarTarjetas(titulo, data, destino) {
+        //Agregar al destino display: flex; flex-direction: row;
+        let dest = document.getElementById(destino);
+        dest.innerHTML = '';
+        dest.style.display = 'flex';
+        dest.style.flexDirection = 'column';
+        //Agregar etiqueta h2 a dest
+        let h2 = document.createElement('h2');
+        h2.textContent = titulo;
+        dest.appendChild(h2);
+        //Crea la lista
+        data.forEach(element => {
+            let card = document.createElement('div');
+            card.classList.add('card');
+            card.style.marginBottom = '5px';
+            card.style.padding = '10px';
+            card.style.border = '1px solid black';
+            card.style.backgroundColor = '#fefae0';
+            let title = document.createElement('div');
+            title.classList.add('card-title');
+            title.textContent = element.title;
+            title.style.fontSize = '24px';
+            title.style.color = 'black';
+            card.appendChild(title);
+            let subTitle = document.createElement('div');
+            subTitle.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+            subTitle.textContent = element.subtitle;
+            card.appendChild(subTitle);
+            let p = document.createElement('p');
+            p.classList.add('card-text');
+            p.innerHTML = element.paragraph;
+            card.appendChild(p);
+            let link = document.createElement('div');
+            link.style.width = '40%';
+            link.style.margin = 'auto';
+            link.innerHTML = '<button class="card-link btn btn-success" style="width: 100%; background-color: #283E30;" onClick = "'+ element.function+'" > Ver más</button >';
+            card.appendChild(link);
+            dest.appendChild(card);
+        });
+    }
+    mostrarUnaTarjeta(titulo, data, destino) {
+        //Agregar al destino display: flex; flex-direction: row;
+        let dest = document.getElementById(destino);
+        dest.innerHTML = '';
+        //Agregar etiqueta h2 a dest
+        let h2 = document.createElement('h2');
+        h2.textContent = titulo;
+        dest.appendChild(h2);
+        //Crea los datos de la tarjeta
+        let card = document.createElement('div');
+        card.classList.add('card');
+        card.style.marginBottom = '5px';
+        card.style.padding = '10px';
+        card.style.border = '1px solid black';
+        card.style.backgroundColor = '#fefae0';
+        for (let key in data) {
+            let p = document.createElement('p');
+            p.classList.add('card-text');
+            p.innerHTML = key + ': ' + data[key];
+            p.style.fontSize = '17px';
+            p.style.color = 'black';
+            card.appendChild(p);
+        }
+        dest.appendChild(card);
+    }
+}
