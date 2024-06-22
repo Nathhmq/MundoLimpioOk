@@ -63,8 +63,9 @@ class Vista {
         mensajeDiv.style.position = 'absolute';
         mensajeDiv.style.width = '70%';
         mensajeDiv.style.height = '5%'
-        mensajeDiv.style.right = '10%';
+        mensajeDiv.style.right = '16%';
         mensajeDiv.style.bottom = '20%';
+        mensajeDiv.style.top = '88%';
         mensajeDiv.innerHTML = mensaje
         if (ok) {
             mensajeDiv.style.backgroundColor = 'green';

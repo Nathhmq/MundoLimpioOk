@@ -20,7 +20,7 @@ function ingresar() {
         usuario.login(req, function (data) {
             if (data.success) {
                 if (data.cant == 0) {
-                    vista.mostrarMensaje(false, "Usuario o contraseña incorrectos");
+                    vista.mostrarMensaje(false, 'Usuario o contraseña incorrectos');
                     return;
                 }
                 let usuario1 = data.data[0]
@@ -31,6 +31,7 @@ function ingresar() {
                     localStorage.setItem("password", req.password);
                     localStorage.setItem("nombre", usuario1.nombre);
                     localStorage.setItem("celular", usuario1.celular);
+                    localStorage.setItem("id", usuario1.id_cliente);
                     mostrarMenuUsuario();
                 } else {
                     empresa.setData(usuario1);
@@ -40,6 +41,9 @@ function ingresar() {
                 vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
             }
         });
+    } else {
+        // Mostrar mensaje de error si los datos no son válidos
+        vista.mostrarMensaje(false, req.msj);
     }
 }
 
@@ -56,7 +60,7 @@ function crearUsuario() {
                 vista.mostrarMensaje(true, "Usuario creado.")
 
             } else {
-                vista.mostrarMensaje(false, "El cliente no se pudo crear.")
+                vista.mostrarMensaje(false, 'El cliente no se pudo crear.')
             }
 
         })
@@ -73,11 +77,10 @@ function crearEmpresa() {
             //verificar si respuesta ok
             if (data.success) {
                 vista.mostrarPlantilla('login', 'contenido');
-                vista.mostrarPlantilla('pieDePagina1', 'pieDePagina');
                 vista.mostrarMensaje(true, "Empresa creada.")
 
             } else {
-                vista.mostrarMensaje(false, "La empresa no se pudo crear.")
+                vista.mostrarMensaje(false, 'La empresa no se pudo crear.')
             }
 
         })
@@ -121,7 +124,6 @@ function mostrarEmpresa(nit) {
     });
 }
 
-
 function registrarUsuario() {
     vista.mostrarPlantilla('formRegisUsuario', 'contenido');
 }
@@ -144,17 +146,11 @@ function mostrarNotificaciones() {
     vista.mostrarPlantilla('notificaciones', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Notificaciones";
-}
+};
+
 function mostrarMenuEmpresa() {
     vista.mostrarPlantilla('menuDeEmpresa', 'contenido');
 };
-
-function mostrarEmpresas() {
-    vista.mostrarPlantilla('listaEmpresa', 'contenido');
-    vista.mostrarPlantilla('encabezado1', 'encabezado');
-    document.getElementById("tituloEncabezado").innerText = "Empresas";
-}
-
 
 function mostrarMapa() {
     vista.mostrarPlantilla('mapaLimpio', 'contenido');
@@ -218,31 +214,154 @@ function mostrarPerfilUsuario() {
     var inputCelular = document.getElementById("cambiarTel");
     inputCelular.placeholder = localStorage.getItem("celular");
 
-
+    //Modal Eliminar Cuenta
     var modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
     var btnEliminarCuenta = document.getElementById("btnEliminarCuenta");
-    var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
     var botonCancelarEliminar = document.getElementById("botonCancelarEliminar");
 
     btnEliminarCuenta.onclick = function () {
         modalEliminarCuenta.style.display = "block";
     }
 
+    /*
     botonAceptarEliminar.onclick = function () {
         alert("Cuenta eliminada");
         modalEliminarCuenta.style.display = "none";
     }
-
+*/
     botonCancelarEliminar.onclick = function () {
         modalEliminarCuenta.style.display = "none";
     }
 
+    //Modal Cambiar Telefono
+    var modalCambiarTelefono = document.getElementById("modalCambiarTelefono");
+    var btnCambiarTelefono = document.getElementById("btnCambiarTelefono");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarTelefono.onclick = function () {
+        modalCambiarTelefono.style.display = "block";
+    }
+
+    //Modal Cambiar nombre
+    var modalCambiarNombre = document.getElementById("modalCambiarNombre");
+    var btnCambiarNombre = document.getElementById("btnCambiarNombre");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarNombre.onclick = function () {
+        modalCambiarNombre.style.display = "block";
+    }
+
+    //Modal Cambiar Contraseña
+    var modalCambiarContrasena = document.getElementById("modalCambiarContrasena");
+    var btnCambiarContrasena = document.getElementById("btnCambiarContrasena");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarContrasena.onclick = function () {
+        modalCambiarContrasena.style.display = "block";
+    }
+
+    // Cerrar el modal si se hace clic fuera de cualquiera de los dos modales
     window.onclick = function (event) {
         if (event.target == modalEliminarCuenta) {
             modalEliminarCuenta.style.display = "none";
         }
+        if (event.target == modalCambiarTelefono) {
+            modalCambiarTelefono.style.display = "none";
+        }
+        if (event.target == modalCambiarNombre) {
+            modalCambiarNombre.style.display = "none";
+        }
+        if (event.target == modalCambiarContrasena) {
+            modalCambiarContrasena.style.display = "none";
+        }
     }
 };
+
+function desactivarCliente() {
+    //Recuperar el id cliente
+    data = {
+        "id_cliente": usuario.id_usuario
+    }
+
+    //ejecutar el metodo en el modelo
+    usuario.defuse(data, function (data) {
+        //avisar 
+        modalEliminarCuenta.style.display = "none";
+        vista.mostrarMensaje(true, 'Cuenta eliminada');
+
+        setTimeout(function () {
+            vista.mostrarPlantilla('paginaInicio', 'contenido');
+        }, 4000);
+    });
+
+}
+
+function cambiarCelularUsuario() {
+    //Leer los datos del formulario 
+    let data = vista.getForm('formCambiartelefono');
+    //Recuperar el id cliente
+    data.id_cliente = usuario.id_usuario;
+    //Actualizar el objeto empresa 
+    usuario.setData(data);
+    //Modificar en la base de datos 
+    if (data.ok) {
+        usuario.cambiarCelular(data, function (data) {
+            modalCambiarTelefono.style.display = "none";
+            if (data.success) {
+                vista.mostrarMensaje(true, 'Teléfono actualizado correctamente');
+                document.getElementById('formCambiartelefono').reset();
+            } else {
+                vista.mostrarMensaje(false, 'Error al actualizar el teléfono');
+            }
+        }
+        );
+    }
+}
+
+function cambiarNombreUsuario() {
+    //Leer los datos del formulario 
+    let data = vista.getForm('formCambiarNombre');
+    //Recuperar el id cliente
+    data.id_cliente = usuario.id_usuario;
+    //Actualizar el objeto empresa 
+    usuario.setData(data);
+    //Modificar en la base de datos 
+    if (data.ok) {
+        usuario.cambiarNombre(data, function (data) {
+            modalCambiarNombre.style.display = "none";
+            if (data.success) {
+                vista.mostrarMensaje(true, 'Nombre actualizado correctamente');
+                document.getElementById('formCambiarNombre').reset();
+            } else {
+                vista.mostrarMensaje(false, 'Error al actualizar el nombre');
+            }
+        }
+        );
+    }
+}
+
+function cambiarContraseñaUsuario() {
+    //Leer los datos del formulario 
+    let data = vista.getForm('formCambiarContrasena');
+    //Recuperar el id cliente
+    data.id_cliente = usuario.id_usuario;
+    //Actualizar el objeto empresa 
+    usuario.setData(data);
+    //Modificar en la base de datos 
+    if (data.ok) {
+        usuario.cambiarPassword(data, function (data) {
+            modalCambiarContrasena.style.display = "none";
+            if (data.success) {
+                vista.mostrarMensaje(true, 'Contraseña actualizada correctamente');
+                document.getElementById('formCambiarContrasena').reset();
+            } else {
+                vista.mostrarMensaje(false, 'Error al actualizar la contraseña');
+            }
+        }
+        );
+    }
+}
 
 function mostarSobreNosotros() {
     vista.mostrarPlantilla('mundoLimpio', 'contenido');

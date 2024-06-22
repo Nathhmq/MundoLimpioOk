@@ -96,6 +96,7 @@
             </div>
         </div>
     </div>
+
     <div id="modalCerrarSesion" class="modalPequeño">
         <div class="contenido-modal">
             <p>¿Seguro que quiere cerrar sesión?</p>
@@ -103,7 +104,6 @@
             <button id="botonAceptar">Aceptar</button>
         </div>
     </div>
-
 
     <div id="modalEliminarCuenta" class="modalPequeño">
         <div class="contenido-modal">
@@ -114,32 +114,36 @@
             </svg>
             <p>¿Seguro que quiere eliminar su cuenta?</p>
             <button id="botonCancelarEliminar">Cancelar</button>
-            <button id="botonAceptarEliminar">Aceptar</button>
+            <button id="botonAceptarEliminar" onclick="desactivarCliente()">Aceptar</button>
         </div>
     </div>
 
-    <div id="modalCambiarContrasena" class="modal">
+    <div id="modalCambiarContrasena" class="modalPequeño">
         <div class="contenido-modal">
             <h2>Cambiar contraseña</h2>
-            <div id="formCambiarContrasena">
-                <input type="password" class="rectanguloModal3" placeholder="Contraseña actual" required>
-                <input type="password" class="rectanguloModal3" placeholder="Contraseña nueva" required>
-                <input type="password" class="rectanguloModal3" placeholder="Repetir contraseña" required>
-                <button id="botonConfirmar">Confirmar</button>
-            </div>
+            <form id="formCambiarContrasena">
+                <div class="password">
+                    <label> Contraseña nueva</label>
+                    <input type="password" name="password" required>
+                    <label> Repetir contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+            </form>
+            <button id="botonConfirmarContra" onclick="cambiarContraseñaUsuario()">Confirmar</button>
         </div>
     </div>
 
-    <div id="modalCambiarTelefono" class="modal">
+    <div id="modalCambiarTelefono" class="modalPequeño">
         <div class="contenido-modal">
             <h2>Cambiar teléfono</h2>
-            <div id="formCambiartelefono">
-                <input type="tel" class="rectanguloModal3" placeholder="teléfono actual" required>
-                <input type="tel" class="rectanguloModal3" placeholder="Nuevo teléfono" required>
-                <button id="botonConfirmarTelefono">Confirmar</button>
-            </div>
+            <form id="formCambiartelefono">
+                <div class="celularU">
+                    <label> Teléfono nuevo</label>
+                    <input type="tel" name="celular" id="celular" required>
+                </div>
+            </form>
+            <button id="botonConfirmarTelefono" onclick="cambiarCelularUsuario()">Confirmar</button>
         </div>
-            
     </div>
 
     <div id="modalRecuperarContrasena" class="modal">
@@ -154,13 +158,16 @@
         </div>  
     </div>
 
-    <div id="modalCambiarNombre" class="modal">
+    <div id="modalCambiarNombre" class="modalPequeño">
         <div class="contenido-modal">
             <h2>Cambiar Nombre</h2>
-            <div id="formCambiarNombre">
-                <input type="tel" class="rectanguloModal3" placeholder="Ingrese el nuevo nombre" required>
-                <button id="botonConfirmarNombre">Confirmar</button>
-            </div>
+            <form id="formCambiarNombre">
+                <div class="username">
+                    <label> Nombre nuevo</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+            </form>
+            <button id="botonConfirmarNombre" onclick="cambiarNombreUsuario()">Confirmar</button>
         </div> 
     </div>
     <!-------------------------------------------------TEMPLATES USUARIO--------------------------------------------------------->
@@ -246,16 +253,16 @@
                     <div class="formulario">
                         <form id="formLogin">
                             <div class="username">
-                                <input type="text" name="correo" required>
                                 <label> Correo</label>
+                                <input type="text" name="correo" required>
                             </div>
                             <div class="password">
-                                <input type="password" name="password" required>
                                 <label>Contraseña</label>
+                                <input type="password" name="password" required>
                             </div>
                         </form>
-                        <button class="btnCrear" id="btnIngresar" onclick="ingresar()">Ingresar</button>
                         <button class="btnRecordar" id="recordar">Recuperar contraseña</button>
+                        <button class="btnCrear" id="btnIngresar" onclick="ingresar()">Ingresar</button>
                     </div>
                 </div>
             </div>
@@ -282,43 +289,42 @@
                 <div class="formulario" id="formEmpresa">
                     <form id="formularioEmpresas">
                         <div class="username">
-                            <input type="text" name="nombre_encargado" id="nombreUsuario" required>
                             <label> Nombre del encargado de las empresa </label>
+                            <input type="text" name="nombre_encargado" id="nombreUsuario" required>
                         </div>
                         <div class="username">
-                            <input type="text" name="nombre_empresa" id="nombreUsuario" required>
                             <label> Nombre de la empresa </label>
+                            <input type="text" name="nombre_empresa" id="nombreUsuario" required>
                         </div>
                         <div class="NumNIT">
-                            <input type="number" name="NIT" id="numeroNIT" required>
                             <label> NIT </label>
+                            <input type="number" name="NIT" id="numeroNIT" required>
                         </div>
                         <div class="phone">
-                            <input type="tel" name="telefono" id="telefono" required>
                             <label> Número de contacto </label>
+                            <input type="tel" name="telefono" id="telefono" required>
                         </div>
                         <div class="birthdate">
-                            <input type="text" name="direccion" id="direccion" required>
                             <label> Dirección </label>
+                            <input type="text" name="direccion" id="direccion" required>
                         </div>
                         <div class="email">
-                            <input type="email" name="correo" id="correoElectronico" required>
                             <label> Correo </label>
+                            <input type="email" name="correo" id="correoElectronico" required>
                         </div>
                         <div class="password">
-                            <input type="password" name="password" id="contraseña" required>
                             <label> Contraseña </label>
+                            <input type="password" name="password" id="contraseña" required>
                         </div>
                         <div class="confirm-password">
-                            <input type="password" name="confirm-password" required>
                             <label> Confirmar contraseña </label>
+                            <input type="password" name="confirm-password" required>
                         </div>
                     </form>
                     <button class="btnCrear" onclick="crearEmpresa()">Crear</button>
-                    <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
-                            onclick="mostrarInicioUsuario()">Inicia sesión</button>.</h4>
                 </div>
-
+                <h4 class="d-flex justify-content-center 100%">¿Ya tienes cuenta? <button class="btnIniciarSesion"
+                        onclick="mostrarInicioUsuario()">Inicia sesión</button>.</h4>
             </div>
         </div>
     </template>
@@ -338,31 +344,31 @@
                 <div class="formulario" id="formUsuario">
                     <form id="formRegistroUsuario">
                         <div class="username">
-                            <input type="text" name="nombre" id="nombre" required>
                             <label> Nombre </label>
+                            <input type="text" name="nombre" id="nombre" required>
                         </div>
                         <div class="email">
-                            <input type="email" name="correo" id="correoElectronico" required>
                             <label> Email </label>
+                            <input type="email" name="correo" id="correoElectronico" required>
                         </div>
                         <div class="phone">
-                            <input type="tel" name="celular" id="numeroCelular" required>
                             <label> Celular </label>
+                            <input type="tel" name="celular" id="numeroCelular" required>
                         </div>
                         <div class="password">
-                            <input type="password" name="password" id="Contraseña" required>
                             <label> Contraseña </label>
+                            <input type="password" name="password" id="Contraseña" required>
                         </div>
                         <div class="confirm-password">
-                            <input type="password" name="confirm-password" required>
                             <label> Confirmar contraseña </label>
+                            <input type="password" name="confirm-password" required>
                         </div>
                     </form>
                     <button class="btnCrear" onclick="crearUsuario()">Crear</button>
-                    <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
-                            id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
-                    </h4>
                 </div>
+                <h4 class="d-flex justify-content-center 100%">Ya tienes cuenta <button class="btnIniciarSesion"
+                        id="btnIniciarSesionUsuario" onclick="mostrarInicioUsuario()">Inicia sesión</button>.
+                </h4>
             </div>
         </div>
 
@@ -390,8 +396,9 @@
         </div>
         <div id="contenido1">
             <div class="menuButtons">
-                <button class="button1" id="btnEmpresa" onclick="listarEmpresas()"><svg xmlns="http://www.w3.org/2000/svg"
-                        width="86" height="86" fill="currentColor" class="bi bi-buildings-fill" viewBox="0 0 16 16">
+                <button class="button1" id="btnEmpresa" onclick="listarEmpresas()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor"
+                        class="bi bi-buildings-fill" viewBox="0 0 16 16">
                         <path
                             d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z" />
                     </svg><br>Empresas</button>

@@ -42,4 +42,31 @@ class Cliente extends Connect {
         this.connect(dataReq, endpoint, method, loginCallback);
     }
 
+    //Metodo para desactivar una cuenta
+    defuse(dataReq, loginCallback) {
+        const endpoint = 'clientes';
+        const method = 'PATCH';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+     //Metodo para Actualizar un numero de telefono
+     cambiarCelular(dataReq, loginCallback) {
+        const endpoint = 'clientes/celular';
+        const method = 'PUT';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    //Metodo para Actualizar el nombre de usuario
+    cambiarNombre(dataReq, loginCallback) {
+        const endpoint = 'clientes/nombre';
+        const method = 'PUT';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    //Metodo para Actualizar la contraseña
+    cambiarPassword(dataReq, loginCallback) {
+        const endpoint = 'clientes/password';
+        const method = 'PUT';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
 }

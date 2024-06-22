@@ -183,8 +183,6 @@ h1 {
   font-size: 35px;
   margin: auto;
   margin-top: 13%;
-  margin-bottom: 13%;
-
 }
 
 /*---------------------------------------------------------------------------------Contenidos-----------------*/
@@ -194,24 +192,25 @@ h1 {
 
 .formulario {
   margin: 6%;
+  margin-left: 10%;
   top: auto;
   background-color: #D1D5C3;
   border-radius: 50px;
   height: max-content;
   border-color: #283E30;
-  
 }
 
 
 .formulario form {
-  padding: 40px;
+  padding: 40px 40px 15px 40px;
   box-sizing: border-box;
 
 }
+
 .username,
 .email,
 .phone,
-.birthdate,
+.celularU,
 .password,
 .NumNIT,
 .confirm-password {
@@ -232,7 +231,6 @@ h1 {
 
 .formulario .contraseña {
   position: relative;
-  border-bottom: 2px solid #A4B092;
   margin: 30px 0;
   width: auto;
 }
@@ -240,7 +238,7 @@ h1 {
 .username input,
 .email input,
 .phone input,
-.birthdate input,
+.celularU input,
 .password input,
 .NumNIT input,
 .confirm-password input {
@@ -256,53 +254,15 @@ h1 {
   /**border: none;*/
 }
 
-/*.username label,
-.email label,
-.phone label,
-.birthdate label,
-.password label,
-.NumNIT  label,
-.confirm-password label {
-  position: absolute;
-  top: 20px;
-  left: 10px;
-  color: #B6C0A8;
-  transform: translateY(-50%);
-  font-size: 21px;
-  pointer-events: none;
-  transition: .5s;
-}*/
-
-/*.formulario input[type="text"],
-.formulario input[type="password"] {
-  width: 100%; /* Ocupar todo el ancho del contenedor width: calc(100% - 12px) */
-/*   padding: 5px; /* Espaciado interno del campo */
-/*  border: none; /* Eliminar borde del campo */
-/*  border-radius: 5px; /* Borde redondeado */
-/*  text-align: left; /* Posiciona el texto al principio del campo */
-/*}*/
-
 #FormLogin {
   width: 100%;
   height: 100%;
 }
 
-/*.contraseña input:focus ~ label,
-.contraseña input:focus ~ label {
-  top: -5px;
-  color: #283E30;
-}*/
-
-/*.contraseña input:focus ~ span:before,
-.contraseña input:focus ~ span:before {
-  width: 100px;
-}*/
-
-
 .username input,
 .email input,
 .phone input,
-.birthdate input,
+.celularU input,
 .password input,
 .NumNIT input,
 .confirm-password input {
@@ -320,27 +280,10 @@ h1 {
   /**border: none;*/
 }
 
-/*.username label,
-.email label,
-.phone label,
-.birthdate label,
-.password label,
-.NumNIT label,
-.confirm-password label {
-  position: absolute;
-  top: 20px;
-  left: 10px;
-  color: #B6C0A8;
-  transform: translateY(-60%);
-  font-size: 21px;
-  pointer-events: none;
-  transition: .5s;
-}*/
-
 .username span::before,
 .email span::before,
 .phone span::before,
-.birthdate span::before,
+.celularU span::before,
 .password span::before,
 .NumNIT span::before,
 .confirm-password span::before {
@@ -354,30 +297,30 @@ h1 {
   transition: .5s;
 }
 
-.username input:focus ~ label,
-.email input:focus ~ label,
-.phone input:focus ~ label,
-.birthdate input:focus ~ label,
-.password input:focus ~ label,
-.NumNIT input:focus ~ label,
-.confirm-password input:focus ~ label {
+.username input:focus~label,
+.email input:focus~label,
+.phone input:focus~label,
+.celularU input:focus~label,
+.password input:focus~label,
+.NumNIT input:focus~label,
+.confirm-password input:focus~label {
   top: -5px;
   color: #283E30;
 }
 
-.username input:focus ~ span:before,
-.email input:focus ~ span:before,
-.phone input:focus ~ span:before,
-.birthdate input:focus ~ span:before,
-.password input:focus ~ span:before,
-.confirm-password input:focus ~ span:before {
+.username input:focus~span:before,
+.email input:focus~span:before,
+.phone input:focus~span:before,
+.celularU input:focus~span:before,
+.password input:focus~span:before,
+.confirm-password input:focus~span:before {
   width: 100px;
 }
 
 .btnRecordar {
   justify-content: flex-end;
   margin-left: 47%;
-  margin-bottom: 15%;
+  margin-bottom: 11%;
   border: none;
   background-color: inherit;
 }
@@ -415,8 +358,8 @@ h1 {
   font-family: "Patua One", serif;
   font-weight: 400;
   font-style: normal;
-  margin-left: 28%;
-  margin-top: 10%;
+  margin-left: 24%;
+  margin-top: 1%;
   margin-bottom: 10%;
 }
 
@@ -1206,6 +1149,7 @@ nav {
 .btnNotificacion {
   background-color: #A4B092;
 }
+
 /*----------------------------------------------------------Modales Pequeños*/
 .modalPequeño {
   display: none;
@@ -1280,6 +1224,71 @@ nav {
   padding: 7px 15px;
   margin-left: 7px;
 }
+
 #modalEliminarCuenta::-webkit-scrollbar {
+  display: none;
+}
+
+/*---------------------------------Modal Cambiar Telefono*/
+#botonConfirmarTelefono {
+  background-color: #6C8066;
+  border: none;
+  border-radius: 28px;
+  cursor: poin;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  padding: 7px 15px;
+  margin-top: 22px;
+}
+
+#modalCambiarTelefono::-webkit-scrollbar {
+  display: none;
+}
+
+.rectanguloModal3 {
+  margin: 2%;
+  top: auto;
+  background-color: #D1D5C3;
+  border-radius: 10px;
+  height: max-content;
+  border-color: #283E30;
+  border: none;
+}
+
+/*---------------------------------Modal Cambiar Nombre*/
+#botonConfirmarNombre {
+  background-color: #6C8066;
+  border: none;
+  border-radius: 28px;
+  cursor: poin;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  padding: 7px 15px;
+  margin-top: 22px;
+}
+
+#modalCambiarNombre::-webkit-scrollbar {
+  display: none;
+}
+
+/*---------------------------------Modal Cambiar Contraseña*/
+#botonConfirmarContra {
+  background-color: #6C8066;
+  border: none;
+  border-radius: 28px;
+  cursor: poin;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  padding: 7px 15px;
+  margin-top: 22px;
+}
+
+#modalCambiarContrasena::-webkit-scrollbar {
   display: none;
 }
