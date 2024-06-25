@@ -63,12 +63,17 @@ class Empresa extends Connect {
         const method = 'PUT';
         this.connect(dataReq, endpoint, method, callback);
     }
-    
-    //Metodo para registrar un usuario tipo cliente
+
+    //Metodo para registrar un usuario tipo empresa
     register(dataReq, loginCallback) {
         const endpoint = 'empresas/register';
         const method = 'POST';
         this.connect(dataReq, endpoint, method, loginCallback);
     }
 
+    empresas(dataReq, loginCallback) {
+        const endpoint = 'user/empresas';
+        const method = 'GET';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
 }

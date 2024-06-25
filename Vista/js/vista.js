@@ -19,7 +19,7 @@ class Vista {
         }
     }
     limpiarArea(areaDeTrabajo) {
-        document.getElementById(areaDeTrabajo).innerHTML="";
+        document.getElementById(areaDeTrabajo).innerHTML = "";
     }
 
 
@@ -185,7 +185,7 @@ class Vista {
             let link = document.createElement('div');
             link.style.width = '40%';
             link.style.margin = 'auto';
-            link.innerHTML = '<button class="card-link btn btn-success" style="width: 100%; background-color: #283E30;" onClick = "'+ element.function+'" > Ver más</button >';
+            link.innerHTML = '<button class="card-link btn btn-success" style="width: 100%; background-color: #283E30;" onClick = "' + element.function + '" > Ver más</button >';
             card.appendChild(link);
             dest.appendChild(card);
         });
@@ -215,4 +215,25 @@ class Vista {
         }
         dest.appendChild(card);
     }
+    
+    crearSelect(lista, select, claves) {
+        const select1 = document.getElementById(select);
+    
+        if (select1) {
+          const opcion1 = document.createElement('option');
+          opcion1.value = 0;
+    
+    
+          lista.forEach((opcion) => {
+            const option = document.createElement('option');
+            option.value = opcion[claves[0]];
+            option.textContent = opcion[claves[1]];
+            select1.appendChild(option);
+          });
+    
+        } else {
+          console.error('El contenedor especificado no existe.');
+        }
+      }
+    
 }

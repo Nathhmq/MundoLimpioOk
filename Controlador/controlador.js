@@ -1,7 +1,11 @@
 vista = new Vista()
 usuario = new Cliente()
 empresa = new Empresa()
-
+materia = new Materia()
+let listaEmpresas = []
+let listaMateria = []
+let materialsData = []
+let listaMateriaRecoleccion = []
 
 window.addEventListener('load', function () {
     vista.mostrarPlantilla('paginaInicio', 'contenido');
@@ -19,7 +23,7 @@ function ingresar() {
         //Validar datos en la tabla clientes o empresas
         usuario.login(req, function (data) {
             if (data.success) {
-                if (data.cant == 0) {
+                if (data.data.length == 0) {
                     vista.mostrarMensaje(false, 'Usuario o contraseña incorrectos');
                     return;
                 }
@@ -101,13 +105,13 @@ function listarEmpresas() {
                     '<br>Teléfono:&emsp;&emsp;' + element.telefono + '<br>Correo E:&emsp;&emsp;' + element.correo;
                 empresa.function = 'mostrarEmpresa(' + element.NIT + ')';
                 dataView.push(empresa);
-            });
 
+            });
             vista.limpiarArea("contenido1")
             vista.mostrarPlantilla('encabezado1', 'encabezado');
             document.getElementById("tituloEncabezado").innerText = "Empresas";
-
             vista.mostrarTarjetas('Listado de Empresas Recolectoras', dataView, 'contenido1');
+            listaEmpresas = data.data
         } else {
             console.log('Error al listar empresas');
         }
@@ -138,7 +142,6 @@ function mostrarMenuUsuario() {
 
     btnMenuLateral.addEventListener('click', () => {
         menuLateral.classList.add('active');
-
     });
 };
 
@@ -175,29 +178,86 @@ function mostrarEnvios() {
     vista.mostrarPlantilla('solicitarEnvios', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
-
-    const selectElement = document.getElementById('categoriaMateria');
-    const descripcionElement = document.getElementById('descripcion');
-
-    // Descripciones para cada opción
-    const descripciones = {
-        plastico: "Botellas de agua, envases de alimentos, bolsas de plastico y envases de detergentes",
-        carton: "Cajas de carton.",
-        papel: "Periodicos, revistas y papel de oficina.",
-        metales: "Latas de aluminio, latas de acero y envases de metal",
-        textiles: "Ropa y ropa de cama",
-        vidrio: "Botellas de vidrio, frascos y tarros."
-    };
-
-    // Actualiza la descripción según la opción seleccionada
-    selectElement.addEventListener('change', function () {
-        const selectedValue = selectElement.value;
-        descripcionElement.textContent = descripciones[selectedValue] || '';
+    empresa.listarEmpresas(function (data) {
+        if (data.success) {
+            listaEmpresas = data.data
+            vista.crearSelect(listaEmpresas, "selectEmpresa", ["id_empresa", "nombre_empresa",]);
+        }
     });
-
-    // Inicializa con la primera descripción
-    descripcionElement.textContent = descripciones[selectElement.value];
+    materia.materias(function (data) {
+        if (data.success) {
+            listaMateria = data.data
+            vista.crearSelect(listaMateria, "selectMateria", ["id_materia", "nombre_materia",]);
+        }
+    });
+    listaMateriaRecoleccion = [];
 };
+
+// Función para registrar una recolección
+function recolectar() {
+    if (listaMateriaRecoleccion.length > 0) {
+        // Asignar el ID del cliente actual (asumo que usuario.id_usuario está definido correctamente)
+        data = vista.getForm("formSolicitarEnvio")
+        if (data.ok) {
+            data.id_cliente = usuario.id_usuario;
+            // Llamar al método recolectar del usuario (cliente) para enviar la solicitud al backend
+            usuario.recolectar(data, function (res) {
+                if (res.success) {
+                    listaMateriaRecoleccion.forEach((mat) => mat.id_recoleccion = res.data.id_recoleccion);
+
+                    // Después de registrar la recolección, registrar los materiales
+                    usuario.recolectarMaterial(listaMateriaRecoleccion, function (materialRes) {
+                        if (materialRes.success) {
+                            vista.mostrarMensaje(true, 'Solicitud de recolección registrada correctamente con materiales');
+                            // Limpiar el formulario o realizar cualquier otra acción necesaria después del registro
+                            vista.mostrarPlantilla('solicitarEnvios', 'contenido');
+                        } else {
+                            vista.mostrarMensaje(false, "Error al registrar los materiales de la recolección");
+                        }
+                    });
+                } else {
+                    vista.mostrarMensaje(false, "Error al solicitar recolección");
+                }
+            });
+        }
+    }
+    else {
+        vista.mostrarMensaje(false, "Debe seleccionar material")
+    }
+}
+
+
+function agregarOtroMaterial() {
+    let materiaSelect = document.getElementById("selectMateria");
+    let cantidadInput = document.getElementById("cantidadMateria");
+
+    // Obtener el texto y el valor del select de materia prima
+    let materiaTexto = materiaSelect.options[materiaSelect.selectedIndex].text;
+    let materiaValor = materiaSelect.value;
+    let cantidadValor = cantidadInput.value;
+    listaMateriaRecoleccion.push({ "id_materia": materiaValor, "cantidad_kg": cantidadValor });
+    // Verificar si se seleccionó una materia válida y se ingresó una cantidad
+    if (materiaValor !== "0" && cantidadValor > 0) {
+        let tabla = document.getElementById("tablaMateriales").getElementsByTagName('tbody')[0];
+
+        // Crear una nueva fila
+        let nuevaFila = tabla.insertRow();
+
+        // Crear celdas para la materia y la cantidad
+        let celdaMateria = nuevaFila.insertCell(0);
+        let celdaCantidad = nuevaFila.insertCell(1);
+
+        // Asignar el texto a las celdas
+        celdaMateria.innerText = materiaTexto;
+        celdaCantidad.innerText = cantidadValor;
+
+        // Limpiar los campos de materia y cantidad
+        materiaSelect.value = "0";
+        cantidadInput.value = "";
+    } else {
+        vista.mostrarMensaje(false, "Por favor, seleccione una materia prima");
+    }
+}
 
 function mostrarPerfilUsuario() {
     vista.mostrarPlantilla('perfilUsuario', 'contenido');
@@ -363,7 +423,7 @@ function cambiarContraseñaUsuario() {
     }
 }
 
-function mostarSobreNosotros() {
+function mostrarSobreNosotros() {
     vista.mostrarPlantilla('mundoLimpio', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "Mundo Limpio";
@@ -393,7 +453,7 @@ function mostrarComoHacerPQR() {
     document.getElementById("tituloEncabezado").innerText = "¿Cómo realizar una PQR?";
 }
 
-function mostarDiferenciado() {
+function mostrarDiferenciado() {
     vista.mostrarPlantilla('diferenciado', 'contenido');
     vista.mostrarPlantilla('encabezado1', 'encabezado');
     document.getElementById("tituloEncabezado").innerText = "¿En qué se diferencia Mundo Limpio?";
@@ -405,16 +465,32 @@ function mostrarPrivacidad() {
     document.getElementById("tituloEncabezado").innerText = "¿Cómo protege mi privacidad y mi información?";
 }
 
-function mostrarHistorialEnvios() {
-    vista.mostrarPlantilla('historialEnvios', 'contenido');
-    vista.mostrarPlantilla('encabezado1', 'encabezado');
-    document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
-}
+// Función para mostrar el historial de envíos
+function listarRecolecciones() {
+    usuario.historial(usuario.id_usuario, function (data) {
+        if (data.success) {
+            // Recorrer la data y adaptar la estructura al método mostrarTarjetas de la clase Vista
+            let dataView = [];
+            data.data.forEach(element => {
+                let recoleccion = {};
+                recoleccion.title = 'Recolección ID: ' + element.id_recoleccion;
+                recoleccion.subTitle = element.fecha;
+                recoleccion.paragraph = 'Ubicación: ' + element.ubicacion +
+                    '<br>Materia: ' + element.nombre_materia +
+                    '<br>Cantidad: ' + element.cantidad_kg + ' Kg';
+                recoleccion.function = 'mostrarRecoleccion(' + element.id_recoleccion + ')';
+                dataView.push(recoleccion);
+            });
 
-function mostarSolicitudEnvios() {
-    vista.mostrarPlantilla('solicitarEnvios', 'contenido');
-    vista.mostrarPlantilla('encabezado1', 'encabezado');
-    document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
+            // Limpiar el área y mostrar las tarjetas
+            vista.mostrarPlantilla('encabezado1', 'encabezado');
+            document.getElementById("tituloEncabezado").innerText = "Historial de Recolecciones";
+            vista.mostrarTarjetas('Listado de Recolecciones', dataView, 'contenido');
+        } else {
+            console.log('Error al listar recolecciones');
+            vista.mostrarMensaje(false, "Error al cargar el historial de recolecciones");
+        }
+    });
 }
 
 function mostrarSolicitudRecolecciones() {

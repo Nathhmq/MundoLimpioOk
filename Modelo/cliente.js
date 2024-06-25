@@ -49,8 +49,8 @@ class Cliente extends Connect {
         this.connect(dataReq, endpoint, method, loginCallback);
     }
 
-     //Metodo para Actualizar un numero de telefono
-     cambiarCelular(dataReq, loginCallback) {
+    //Metodo para Actualizar un numero de telefono
+    cambiarCelular(dataReq, loginCallback) {
         const endpoint = 'clientes/celular';
         const method = 'PUT';
         this.connect(dataReq, endpoint, method, loginCallback);
@@ -68,5 +68,26 @@ class Cliente extends Connect {
         const endpoint = 'clientes/password';
         const method = 'PUT';
         this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    //metodo para ingresar datos en la tabla de recoleccion
+    recolectar(dataReq, loginCallback) {
+        const endpoint = 'recolecciones/register';
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    //metodo para insertar datos en la tabla de materiales
+    recolectarMaterial(dataReq, loginCallback) {
+        const endpoint = 'recolecciones/registerMaterials';
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    //metodo para mostrar los datos  que el cliente tiene en recoleccion
+    historial(dataReq, loginCallback) {
+        const endpoint = `recolecciones/historial/${dataReq}`;
+        const method = 'GET';
+        this.connect({}, endpoint, method, loginCallback);
     }
 }
