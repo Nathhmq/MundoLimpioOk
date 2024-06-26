@@ -8,6 +8,7 @@ class Empresa extends Connect {
         this.telefono = '';
         this.direccion = '';
         this.correo = '';
+        this.tipo = "";
         this.password = '';
     }
 
@@ -20,19 +21,21 @@ class Empresa extends Connect {
         this.telefono = data.telefono;
         this.direccion = data.direccion;
         this.correo = data.correo;
+        this.tipo = data.tipo;
         this.password = data.password;
     }
 
     //Retorna un objeto con los atributos de la clase 
     getData() {
         return {
-            id_empresa: parseInt(this.id_empresa),
+            id: this.id,
             nombre_empresa: this.nombre_empresa,
             nombre_encargado: this.nombre_encargado,
             NIT: this.NIT,
             telefono: this.telefono,
             direccion: this.direccion,
-            correo: this.correo
+            correo: this.correo,
+            tipo: this.tipo
         };
     }
 

@@ -215,6 +215,46 @@ class Vista {
         }
         dest.appendChild(card);
     }
+
+    mostrarTarjetas1(titulo, data, destino) {
+        //Agregar al destino display: flex; flex-direction: row;
+        let dest = document.getElementById(destino);
+        dest.innerHTML = '';
+        dest.style.display = 'flex';
+        dest.style.flexDirection = 'column';
+        //Agregar etiqueta h2 a dest
+        let h2 = document.createElement('h2');
+        h2.textContent = titulo;
+        dest.appendChild(h2);
+        //Crea la lista
+        data.forEach(element => {
+            let card = document.createElement('div');
+            card.classList.add('card');
+            card.style.marginBottom = '5px';
+            card.style.padding = '10px';
+            card.style.border = '1px solid black';
+            card.style.backgroundColor = '#fefae0';
+            let title = document.createElement('div');
+            title.classList.add('card-title');
+            title.textContent = element.title;
+            title.style.fontSize = '24px';
+            title.style.color = 'black';
+            card.appendChild(title);
+            let subTitle = document.createElement('div');
+            subTitle.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+            subTitle.textContent = element.subtitle;
+            card.appendChild(subTitle);
+            let p = document.createElement('p');
+            p.classList.add('card-text');
+            p.innerHTML = element.paragraph;
+            card.appendChild(p);
+            let link = document.createElement('div');
+            link.style.width = '40%';
+            link.style.margin = 'auto';
+            card.appendChild(link);
+            dest.appendChild(card);
+        });
+    }
     
     crearSelect(lista, select, claves) {
         const select1 = document.getElementById(select);

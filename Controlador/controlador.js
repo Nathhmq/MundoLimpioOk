@@ -39,6 +39,12 @@ function ingresar() {
                     mostrarMenuUsuario();
                 } else {
                     empresa.setData(usuario1);
+                    localStorage.setItem("email", req.correo);
+                    localStorage.setItem("password", req.password);
+                    localStorage.setItem("nombreEmpresa", usuario1.nombre);
+                    localStorage.setItem("nombreEmpresa", usuario1.nombre);
+                    localStorage.setItem("celular", usuario1.celular);
+                    localStorage.setItem("id", usuario1.id_cliente);
                     mostrarMenuEmpresa();
                 }
             } else {
@@ -137,6 +143,7 @@ function registarEmpresa() {
 };
 
 function mostrarMenuUsuario() {
+
     vista.mostrarPlantilla('menuDeUsuario', 'contenido');
     const btnMenuLateral = document.getElementById('btnMenuLateral');
 
@@ -153,6 +160,11 @@ function mostrarNotificaciones() {
 
 function mostrarMenuEmpresa() {
     vista.mostrarPlantilla('menuDeEmpresa', 'contenido');
+    const btnMenuLateral = document.getElementById('btnMenuLateral');
+
+    btnMenuLateral.addEventListener('click', () => {
+        menuLateral.classList.add('active');
+    });
 };
 
 function mostrarMapa() {
@@ -204,13 +216,15 @@ function recolectar() {
             usuario.recolectar(data, function (res) {
                 if (res.success) {
                     listaMateriaRecoleccion.forEach((mat) => mat.id_recoleccion = res.data.id_recoleccion);
-
+                    vista.mostrarMensaje(true, 'Solicitud de recolección registrada correctamente');
                     // Después de registrar la recolección, registrar los materiales
                     usuario.recolectarMaterial(listaMateriaRecoleccion, function (materialRes) {
                         if (materialRes.success) {
-                            vista.mostrarMensaje(true, 'Solicitud de recolección registrada correctamente con materiales');
+                            vista.mostrarMensaje(true, 'Solicitud de recolección registrada');
                             // Limpiar el formulario o realizar cualquier otra acción necesaria después del registro
                             vista.mostrarPlantilla('solicitarEnvios', 'contenido');
+                            vista.mostrarPlantilla('encabezado1', 'encabezado');
+                            document.getElementById("tituloEncabezado").innerText = "Mis Envíos";
                         } else {
                             vista.mostrarMensaje(false, "Error al registrar los materiales de la recolección");
                         }
@@ -225,7 +239,6 @@ function recolectar() {
         vista.mostrarMensaje(false, "Debe seleccionar material")
     }
 }
-
 
 function agregarOtroMaterial() {
     let materiaSelect = document.getElementById("selectMateria");
@@ -485,7 +498,7 @@ function listarRecolecciones() {
             // Limpiar el área y mostrar las tarjetas
             vista.mostrarPlantilla('encabezado1', 'encabezado');
             document.getElementById("tituloEncabezado").innerText = "Historial de Recolecciones";
-            vista.mostrarTarjetas('Listado de Recolecciones', dataView, 'contenido');
+            vista.mostrarTarjetas1('Listado de Recolecciones', dataView, 'contenido1');
         } else {
             console.log('Error al listar recolecciones');
             vista.mostrarMensaje(false, "Error al cargar el historial de recolecciones");
@@ -549,5 +562,92 @@ botonCancelar.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modalCerrarSesion) {
         modalCerrarSesion.style.display = "block";
+    }
+};
+
+
+//----------------------------------------------------CONTROLADOR PANTALLAS EMPRESA---------------------------------
+function mostrarConfigeEmpresa() {
+    vista.mostrarPlantilla('configuracionEmpresa', 'contenido');
+    vista.mostrarPlantilla('encabezado1', 'encabezado');
+    document.getElementById("tituloEncabezado").innerText = "Configuración";
+}
+
+function mostrarPerfilEmpresa() {
+    vista.mostrarPlantilla('perfilEmpresa', 'contenido');
+
+    var labelNombre = document.getElementById("labelNombre");
+    labelNombre.innerHTML = localStorage.getItem("nombre");
+
+    var inputEmail = document.getElementById("correoElectronico");
+    inputEmail.placeholder = localStorage.getItem("email");
+
+    var inputPassword = document.getElementById("CambiarPass");
+    inputPassword.placeholder = localStorage.getItem("password");
+
+    var inputCelular = document.getElementById("cambiarTel");
+    inputCelular.placeholder = localStorage.getItem("celular");
+
+    //Modal Eliminar Cuenta
+    var modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
+    var btnEliminarCuenta = document.getElementById("btnEliminarCuenta");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+    var botonCancelarEliminar = document.getElementById("botonCancelarEliminar");
+
+    btnEliminarCuenta.onclick = function () {
+        modalEliminarCuenta.style.display = "block";
+    }
+
+    /*
+    botonAceptarEliminar.onclick = function () {
+        alert("Cuenta eliminada");
+        modalEliminarCuenta.style.display = "none";
+    }
+*/
+    botonCancelarEliminar.onclick = function () {
+        modalEliminarCuenta.style.display = "none";
+    }
+
+    //Modal Cambiar Telefono
+    var modalCambiarTelefono = document.getElementById("modalCambiarTelefono");
+    var btnCambiarTelefono = document.getElementById("btnCambiarTelefono");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarTelefono.onclick = function () {
+        modalCambiarTelefono.style.display = "block";
+    }
+
+    //Modal Cambiar nombre
+    var modalCambiarNombre = document.getElementById("modalCambiarNombre");
+    var btnCambiarNombre = document.getElementById("btnCambiarNombre");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarNombre.onclick = function () {
+        modalCambiarNombre.style.display = "block";
+    }
+
+    //Modal Cambiar Contraseña
+    var modalCambiarContrasena = document.getElementById("modalCambiarContrasena");
+    var btnCambiarContrasena = document.getElementById("btnCambiarContrasena");
+    //var botonAceptarEliminar = document.getElementById("botonAceptarEliminar");
+
+    btnCambiarContrasena.onclick = function () {
+        modalCambiarContrasena.style.display = "block";
+    }
+
+    // Cerrar el modal si se hace clic fuera de cualquiera de los dos modales
+    window.onclick = function (event) {
+        if (event.target == modalEliminarCuenta) {
+            modalEliminarCuenta.style.display = "none";
+        }
+        if (event.target == modalCambiarTelefono) {
+            modalCambiarTelefono.style.display = "none";
+        }
+        if (event.target == modalCambiarNombre) {
+            modalCambiarNombre.style.display = "none";
+        }
+        if (event.target == modalCambiarContrasena) {
+            modalCambiarContrasena.style.display = "none";
+        }
     }
 };
